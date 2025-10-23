@@ -8,4 +8,3 @@ int main()
   {
     printf("%d x %d = %d\n", a,i, a * i); }
     return 0;}
-    
