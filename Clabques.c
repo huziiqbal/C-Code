@@ -17,7 +17,7 @@
 //     return 0;
 // }
 
-// // function to find the square and cube of a number
+// // // function to find the square and cube of a number
 // int cube_square(int n){
 //     printf("The square of %d is : %d\n",n,n*n);
 //     printf("The cube of %d is : %d\n",n,n*n*n);
@@ -29,7 +29,7 @@
 //     cube_square(n);
 //     return 0 ;
 // }
-// // function that takes 2 integers and return the greater integer
+// // // function that takes 2 integers and return the greater integer
 // int greater(int a,int b ){
 //     if (a>b){
 //         printf("\nThe number %d is greater than %d",a,b);}
@@ -48,8 +48,8 @@
 //     scanf("%d",&b);
 //     greater(a,b);
 // }
-// // functioin inside function
-// // program that find the sum of digits of the factorial of a given number using functions
+// // // functioin inside function
+// // // program that find the sum of digits of the factorial of a given number using functions
 // int k ;
 // int factorial(int n)
 
@@ -140,30 +140,30 @@
 // }
 // }
 
-// method 2 of the above ques
-#include<string.h>
-void main(){
-    int age , result ;char word[10],gr[10] = "grad";
-    printf("Enter your age:");
-    scanf("%d",&age);
-    if(age >= 21)
-    {
-        printf("If you are garduated type 'gard'\nIf you are not graduated type 'non'\n");
-        scanf("%s",&word);
-        result = strcmp(word ,gr);
-        if(result == 0)
-        {
-            printf("Your are elligible for job\n");
-        }
-        else{
-            printf("You are not elligible for job because you are not graduated .\n");
-        }
-    }
-    else{
-        printf("You are not elligible for this job because of your age\n");    }
-}
+// // method 2 of the above ques
+// #include<string.h>
+// void main(){
+//     int age , result ;char word[10],gr[10] = "grad";
+//     printf("Enter your age:");
+//     scanf("%d",&age);
+//     if(age >= 21)
+//     {
+//         printf("If you are garduated type 'gard'\nIf you are not graduated type 'non'\n");
+//         scanf("%s",&word);
+//         result = strcmp(word ,gr);
+//         if(result == 0)
+//         {
+//             printf("Your are elligible for job\n");
+//         }
+//         else{
+//             printf("You are not elligible for job because you are not graduated .\n");
+//         }
+//     }
+//     else{
+//         printf("You are not elligible for this job because of your age\n");    }
+// }
 
-// #date = 12/11/2025
+// // #date = 12/11/2025
 // void main (){
 // int day ;
 // printf("enter the number of day ");
@@ -194,3 +194,27 @@ void main(){
 //     printf("there are only 7 days in a week");
 // }
 // }
+// date = 15-11-2025
+// reverse counting
+// void main(){
+//     int a,i;
+//     printf("enter the number you  want to get reverse counting from\n");
+//     scanf("%d",&a);
+
+// for (i=a;i>=0;i--){
+//     printf("%d,",i);
+//     }
+// }
+
+//multiplication table of n variable
+//DATE = 15-11-2025
+int main(){
+    int i,a;
+    printf("enter the number you want table of:");
+    scanf("%d", &a);
+    for (i = 1; i <= 10; i++)
+    {
+        printf("%d x %d = %d\n ", a, i, a * i);
+    }
+    return 0;
+}
