@@ -208,13 +208,24 @@
 
 //multiplication table of n variable
 //DATE = 15-11-2025
-int main(){
-    int i,a;
-    printf("enter the number you want table of:");
+// int main(){
+//     int i,a;
+//     printf("enter the number you want table of:");
+//     scanf("%d", &a);
+//     for (i = 1; i <= 10; i++)
+//     {
+//         printf("%d x %d = %d\n ", a, i, a * i);
+//     }
+//     return 0;
+// }
+// DATE = 15-11-2025
+void main(){
+     int i,a,sum=0;
+    printf("enter the number whose succesive digits sum you want :");
     scanf("%d", &a);
-    for (i = 1; i <= 10; i++)
-    {
-        printf("%d x %d = %d\n ", a, i, a * i);
+    for (i=1;i<=a;i++){
+        sum = sum+i;
     }
-    return 0;
+    printf("sum = %d",sum);
 }
+

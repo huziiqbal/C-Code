@@ -1,9 +1,10 @@
-id main(){
-//     int a,i;
-//     printf("enter the number you  want to get reverse counting from\n");
-//     scanf("%d",&a);
-
-// for (i=a;i>=0;i--){
-//     printf("%d,",i);
+ main(){
+//     int i,a;
+//     printf("enter the number you want table of:");
+//     scanf("%d", &a);
+//     for (i = 1; i <= 10; i++)
+//     {
+//         printf("%d x %d = %d\n ", a, i, a * i);
 //     }
+//     return 0;
 // }
