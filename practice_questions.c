@@ -125,119 +125,159 @@
 //         n=n/10;
 //         k=k+1;
 //     }
-//    return k ;
-//  }
-//   int largestdigit(int n){
-//      int k,max=0;
-//      while (n>0){
-//          k=n%10;
-//          if (k>max){
-//              max=k;}
-//              n=n/10;}
-//      return max;
-//  }
-//  void main(){
-//      int a,b;
-//       printf("Enter number: ");
-//     scanf("%d", &a);
-//     printf("Enter what you want to know about the number\n1 for sum of digits of the entered number\n2 for counting the number of digits in that number\n3 for finding the largest digit in the number  provided\n");
-//     scanf("%d",&b);
-//     switch(b){
-//         case 1:
-//         printf("The sum of digits of the number you provided is %d",sum(a));
-//         break;
-//         case 2 :
-//         printf("The number of digits in number provided number is %d",num(a));
-//         case 3 :
-//         printf("The largest digit from in the number provided is %d",largestdigit(a));
-//     }
-// }
+// //    return k ;
+// //  }
+// //   int largestdigit(int n){
+// //      int k,max=0;
+// //      while (n>0){
+// //          k=n%10;
+// //          if (k>max){
+// //              max=k;}
+// //              n=n/10;}
+// //      return max;
+// //  }
+// //  void main(){
+// //      int a,b;
+// //       printf("Enter number: ");
+// //     scanf("%d", &a);
+// //     printf("Enter what you want to know about the number\n1 for sum of digits of the entered number\n2 for counting the number of digits in that number\n3 for finding the largest digit in the number  provided\n");
+// //     scanf("%d",&b);
+// // //     switch(b){
+// // //         case 1:
+// // //         printf("The sum of digits of the number you provided is %d",sum(a));
+// // //         break;
+// // //         case 2 :
+// // //         printf("The number of digits in number provided number is %d",num(a));
+// // //         case 3 :
+// // //         printf("The largest digit from in the number provided is %d",largestdigit(a));
+// // //     }
+// // // }
 
-//arrays
-void main(){
-    int i,k,even=0,odd=0;
-    int marks [] = {25,22,56,26,30,58,19};
-    k= sizeof(marks) / sizeof(marks[0]);
-    for (i=0;i<=k;i++){
-        if (marks[i]%2 == 0){
-            even = even +1;
-            }
-        if (marks[i]%2 != 0){
-            odd = odd +1;
-        }
+// // //arrays
+// // void main(){
+// //     int i,k,even=0,odd=0;
+// //     int marks [] = {25,22,56,26,30,58,19};
+// //     k= sizeof(marks) / sizeof(marks[0]);
+// //     for (i=0;i<=k;i++){
+// //         if (marks[i]%2 == 0){
+// //             even = even +1;
+// //             }
+// //         if (marks[i]%2 != 0){
+// //             odd = odd +1;
+// //         }
+// //  }
+// //     printf("The number of even digits in array is %d\n",even);
+// //     printf("The number of odd digits in array is %d",odd);
+// // }
+
+// // // calculating and printing the sum of rows and column in a matrix
+// // void main(){
+// //     int k,i,h,r1=0,r2=0,c1=0,c2=0,c3=0,c4=0;
+// // int marks [4][4]= {{25,22,56,19},{52,44,55,12}};
+// //      k= sizeof(marks) / sizeof(marks[0]);
+// //     for (i=0;i<k;i++){
+// //          r1 = marks[0][i]+r1;
+// //          r2 = r2+marks[1][i];}
+// //     for (h=0;h<2;h++){
+// //         c1=c1+marks[h][0];
+// //         c2=c2+marks[h][1];
+// //         c3=c3+marks[h][2];
+// //         c4=c4+marks[h][3];}
+// //     printf("The sum of elements of row 1 is the matrix is %d\n",r1);
+// //     printf("The sum of elements of row 2 is the matrix is %d\n",r2);
+// //     printf("The sum of elements of column 1 is the matrix is %d\n",c1);
+// //     printf("The sum of elements of column 2 is the matrix is %d\n",c2);
+// //     printf("The sum of elements of column 3 is the matrix is %d\n",c3);
+// //     printf("The sum of elements of column 4 is the matrix is %d\n",c4);
+// //  }
+// // //2nd method : generalized form of above:
+// // void main(){
+// //     int h,t, r , sum=0,c;
+// //     printf("Enter rows and column of your matrix :\n");
+// //     scanf("%d %d",&r,&c);
+// //     printf("Enter the elements of your matrix row wise :\n");
+// //     int matrix[r][c];
+// //     for (h=0;h<r;h++){
+// //         for (t=0;t<c;t++){
+// //             scanf("%d",&matrix[h][t]);}}
+// //             printf("The matrix you gave is :\n");
+// //         for (h=0;h<r;h++){
+// //         for (t=0;t<c;t++){
+// //            printf(" %d ",matrix[h][t]);
+// //             } printf("\n");}
+// //         for (h=0;h<r;h++){
+// //             sum =0;
+// //         for (t=0;t<c;t++){
+// //             sum = sum+ matrix[h][t];
+// // }
+
+// //     printf("The sum of elements of row %d is %d\n",h+1,sum);
+// // }}
+
+// // // finding the largest element of a matrix's row of column
+// // void main(){
+// //     int h,t,r,c,max=0;
+// //     printf("Enter rows and column of your matrix :\n");
+// //     scanf("%d %d",&r,&c);
+// //     printf("Enter the elements of your matrix column wise :\n");
+// //     int matrix[r][c];
+// //     for (h=0;h<r;h++){
+// //         for (t=0;t<c;t++){
+// //             scanf("%d",&matrix[h][t]);
+// //         }}
+// //     printf("The matrix you gave is :\n");
+// //      for (t=0;t<c;t++){
+// //         for (h=0;h<r;h++){
+// //             printf(" %d ",matrix[h][t]);}
+// //             printf("\n");
+// //      }
+// //         for (h=0;h<r;h++){
+// //             max=0;
+// //         for (t=0;t<c;t++){
+// //             if (max<matrix[h][t]){
+// //             max = matrix[h][t];
+// // }}
+
+// //     printf("The largest element of column %d is %d\n",h+1,max);
+// // }}
+
+// void main (){
+//     int i,pass=6645,entered ;
+//     printf("Enter you ATM PIN\nYou have 3 attempts to enter yor corect pin\n");
+//     printf("Enter you ATM PIN ");
+//     scanf ("%d",&entered);
+//     for (i=0;i<4;i++){
+//         if (pass == entered){
+//         printf("You entered correct pin");
+//             break;}
+//         else {
+//            printf("you entered wrong pin,\n");
+//            printf("You have %d attempts left to enter yor corect pin\n",(3-i));
+//     printf("Enter you ATM PIN ");
+//     scanf ("%d",&entered); }}}
+// // same code as above but with while loop
+// void main (){
+// int i=0,pass=6645,entered ;
+//     printf("Enter you ATM PIN\nYou have 3 attempts to enter yor corect pin\n");
+//     printf("Enter you ATM PIN ");
+//     scanf ("%d",&entered);
+//     while (i<4){
+//         if (pass == entered){
+//         printf("You entered correct pin");
+//             break;}
+//         else {
+//            printf("you entered wrong pin,\n");
+//            printf("Now you have %d attempts left to enter yor corect pin\n",(2-i));
+//            i=i+1;
+//     printf("Enter you ATM PIN ");
+//     scanf ("%d",&entered); }}}
+ void main (){
+    int a,k ;
+    printf("Enter the number you want to reverse");
+    scanf("%d",&a);
+    while (a>0){
+        k = a%10;
+        printf("%d",k);
+        a =a/10;
+    }
  }
-    printf("The number of even digits in array is %d\n",even);
-    printf("The number of odd digits in array is %d",odd);
-}
-
-// calculating and printing the sum of rows and column in a matrix
-void main(){
-    int k,i,h,r1=0,r2=0,c1=0,c2=0,c3=0,c4=0;
-int marks [4][4]= {{25,22,56,19},{52,44,55,12}};
-     k= sizeof(marks) / sizeof(marks[0]);
-    for (i=0;i<k;i++){
-         r1 = marks[0][i]+r1;
-         r2 = r2+marks[1][i];}
-    for (h=0;h<2;h++){
-        c1=c1+marks[h][0];
-        c2=c2+marks[h][1];
-        c3=c3+marks[h][2];
-        c4=c4+marks[h][3];}
-    printf("The sum of elements of row 1 is the matrix is %d\n",r1);
-    printf("The sum of elements of row 2 is the matrix is %d\n",r2);
-    printf("The sum of elements of column 1 is the matrix is %d\n",c1);
-    printf("The sum of elements of column 2 is the matrix is %d\n",c2);
-    printf("The sum of elements of column 3 is the matrix is %d\n",c3);
-    printf("The sum of elements of column 4 is the matrix is %d\n",c4);
- }
-//2nd method : generalized form of above:
-void main(){
-    int h,t, r , sum=0,c;
-    printf("Enter rows and column of your matrix :\n");
-    scanf("%d %d",&r,&c);
-    printf("Enter the elements of your matrix row wise :\n");
-    int matrix[r][c];
-    for (h=0;h<r;h++){
-        for (t=0;t<c;t++){
-            scanf("%d",&matrix[h][t]);}}
-            printf("The matrix you gave is :\n");
-        for (h=0;h<r;h++){
-        for (t=0;t<c;t++){
-           printf(" %d ",matrix[h][t]);
-            } printf("\n");}
-        for (h=0;h<r;h++){
-            sum =0;
-        for (t=0;t<c;t++){
-            sum = sum+ matrix[h][t];
-}
-
-    printf("The sum of elements of row %d is %d\n",h+1,sum);
-}}
-
-// finding the largest element of a matrix's row of column
-void main(){
-    int h,t,r,c,max=0;
-    printf("Enter rows and column of your matrix :\n");
-    scanf("%d %d",&r,&c);
-    printf("Enter the elements of your matrix column wise :\n");
-    int matrix[r][c];
-    for (h=0;h<r;h++){
-        for (t=0;t<c;t++){
-            scanf("%d",&matrix[h][t]);
-        }}
-    printf("The matrix you gave is :\n");
-     for (t=0;t<c;t++){
-        for (h=0;h<r;h++){
-            printf(" %d ",matrix[h][t]);}
-            printf("\n");
-     }
-        for (h=0;h<r;h++){
-            max=0;
-        for (t=0;t<c;t++){
-            if (max<matrix[h][t]){
-            max = matrix[h][t];
-}}
-
-    printf("The largest element of column %d is %d\n",h+1,max);
-}}
-
