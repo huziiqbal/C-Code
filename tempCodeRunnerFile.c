@@ -1,10 +1,19 @@
- main(){
-//     int i,a;
-//     printf("enter the number you want table of:");
-//     scanf("%d", &a);
-//     for (i = 1; i <= 10; i++)
-//     {
-//         printf("%d x %d = %d\n ", a, i, a * i);
-//     }
-//     return 0;
-// }
+nipulate(int a){
+//     int k;
+//         if (a==0){
+//             return 0;
+//         }
+//         else if (a!=0){
+//             while (a>=0){
+//             k=a%10;
+//             if (k%2==0){
+//                 // printf("%d",k*k);
+//             a=a/10;
+//             if(a==0){
+//                 break;
+//             }}
+//             else if (k%2!=0){
+//                 printf("%d",k);
+//                 a=a/10;
+//                 if(a==0){
+//                 break;}}}}}
