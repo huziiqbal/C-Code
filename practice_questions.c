@@ -313,113 +313,186 @@
 // //     g =a%10;
 // //     if (g%2==0)
 // //     {even [evev++]=g;}
-// //     else if (g%2!= 0 )
-// //     {odd[ode++] = g;}
+// // //     else if (g%2!= 0 )
+// // //     {odd[ode++] = g;}
+// // //         a=a/10;
+// // //      }
+// // //     printf("The even digits are :\n");
+// // // for (i = evev - 1; i >= 0; i--){
+// // //     printf("%d", even[i]);}
+// // //     printf("\n");
+// // //     printf("The odd digits are :\n");
+// // // for (int i = ode - 1; i >= 0; i--){
+// // //     printf("%d", odd[i]);}
+// // // }
+
+// // // // Armstrong Number//
+// // void main (){
+// //     int num,g,a,k,i, ode=0, odd[1100], sum =0,cube =0;
+// //     k= sizeof(num);
+// //     printf("Enter the number you want to check if that's armstrong number\n");
+// //     scanf("%d",&num);
+// //     a = num ;
+// //     while (a>0){
+// //     g =a%10;
+// //         cube = cube + (g*g*g);
 // //         a=a/10;
-// //      }
-// //     printf("The even digits are :\n");
-// // for (i = evev - 1; i >= 0; i--){
-// //     printf("%d", even[i]);}
-// //     printf("\n");
-// //     printf("The odd digits are :\n");
-// // for (int i = ode - 1; i >= 0; i--){
-// //     printf("%d", odd[i]);}
+// //     }
+// // printf("the sum of cube of each digit of the give number is = %d\n",cube);
+// // if (cube == num ){
+// //     printf("The given number %d is Armstrong numbe ",num);
+// // }
+// // else if (cube != num){
+// //     printf("The given number %d is not an Armstrong number ",num);//eg 370
+// // }
+// // }
+// // // factorial of number
+// // factorial(int a){
+// //     if (a==0){
+// //         return 0;
+// //     }
+// //     else if (a==1){
+// //         return 1;
+// //     }
+// //     else {
+// //         return a * factorial(a-1);
+// //     }
+// // } int
+// // void main(){
+// //     int n;
+// //     printf("Enter the number you want factorial of ");
+// //     scanf("%d",&n);
+// //     printf("The factorial of %d is %d",n,factorial(n));
+// // }
+// // // digits counter
+// // int count(int a){
+// // int k , num = 0 ;
+// //     while (a>0){
+// //         k = a%10;
+// //         num = num +1;
+// //         a=a/10;
+// //     }
+// //     return num;
+// // }
+// // void main (){
+// //     int a;
+// //     printf("Enter the numbner you want to count digits of");
+// //     scanf("%d",&a);
+// //     printf("The number of digits in %d is %d",a,count(a));
 // // }
 
-// // // Armstrong Number//
-// void main (){
-//     int num,g,a,k,i, ode=0, odd[1100], sum =0,cube =0;
-//     k= sizeof(num);
-//     printf("Enter the number you want to check if that's armstrong number\n");
-//     scanf("%d",&num);
-//     a = num ;
-//     while (a>0){
-//     g =a%10;
-//         cube = cube + (g*g*g);
-//         a=a/10;
-//     }
-// printf("the sum of cube of each digit of the give number is = %d\n",cube);
-// if (cube == num ){
-//     printf("The given number %d is Armstrong numbe ",num);
+// // // prime number finder
+// #include <math.h>
+// void main(){
+//     int k,i=2,a,pr=0,np=0;
+//     printf("Enter the number you want to check : ");
+//     scanf("%d",&a);
+//     k=sqrt(a)+10;
+//     while (i<k){
+//         if (a%i==0)
+//         { if (a==2){
+//                 pr = pr+1;
+//             }
+//             else {
+//             np = np+1;}
+//         }
+//         else if ((a%i)!= 0){
+//           pr=pr+1;
 // }
-// else if (cube != num){
-//     printf("The given number %d is not an Armstrong number ",num);//eg 370
+//          i=i+1;
 // }
-// }
-// // factorial of number
-// factorial(int a){
-//     if (a==0){
-//         return 0;
-//     }
-//     else if (a==1){
-//         return 1;
+//     if (np>0){
+//         printf("THE NUMBER IS NOT PRIME");
 //     }
 //     else {
-//         return a * factorial(a-1);
+//         printf("THE NUMBER IS PRIME");
 //     }
-// } int
-// void main(){
-//     int n;
-//     printf("Enter the number you want factorial of ");
-//     scanf("%d",&n);
-//     printf("The factorial of %d is %d",n,factorial(n));
 // }
-// // digits counter
-// int count(int a){
-// int k , num = 0 ;
-//     while (a>0){
-//         k = a%10;
-//         num = num +1;
-//         a=a/10;
-//     }
-//     return num;
-// }
-// void main (){
-//     int a;
-//     printf("Enter the numbner you want to count digits of");
+// // void main(){
+// //      int k,a,sum=0;
+// //     printf("enter the number whose succesive digits sum you want :");
+// //     scanf("%d", &a);
+// //     while (a>0){
+// //         k=a%10;
+// //         sum = sum + k;
+// //         a=a/10;
+// //     }
+// //     printf("sum = %d",sum);
+// // }
+
+// // int factorial(int a){
+// //     if (a==0){
+// //         return 1;
+// //     }
+// //     else if (a==1){
+// //         return 1;
+// //     }
+// //     else {
+// //         return a * factorial(a-1);
+// //     }
+// // }
+// //  void main(){
+// //     int n;
+// //     printf("Enter the number you want factorial of ");
+// //     scanf("%d",&n);
+// //     printf("The factorial of %d is %d",n,factorial(n));
+// // }
+
+// // void main (){
+// //     int i=1,n,fact=1;
+// //     printf("Enter the number you want factorial of ");
+// //     scanf("%d",&n);
+// //     for (i=1;i<=n;i++){
+// //         fact = fact * i;
+// //     }
+//     // while (i>=n){
+//     //     fact =((fact * i) + (fact));
+//     //     i= i+1;
+
+//     // }
+//     // printf("The factorial of %d is %d",n,fact);
+// // }
+// int main(){
+
+//     int a,b,i,c, greater =0 , smaller =0;
+//     printf("Enter the number:");
 //     scanf("%d",&a);
-//     printf("The number of digits in %d is %d",a,count(a));
-// }
-
-// // prime number finder
-#include <math.h>
-void main(){
-    int k,i=2,a,pr=0,np=0;
-    printf("Enter the number you want to check : ");
-    scanf("%d",&a);
-    k=sqrt(a)+10;
-    while (i<k){
-        if (a%i==0)
-        { if (a==2){
-                pr = pr+1;
-            }
-            else {
-            np = np+1;}
-        }
-        else if ((a%i)!= 0){
-          pr=pr+1;
-}
-         i=i+1;
-}
-    if (np>0){
-        printf("THE NUMBER IS NOT PRIME");
-    }
-    else {
-        printf("THE NUMBER IS PRIME");
-    }
-}
-// void main(){
-//      int k,a,sum=0;
-//     printf("enter the number whose succesive digits sum you want :");
-//     scanf("%d", &a);
+//     for (i=0;i<=a;i++){
+//         c=a%10;
+//         if (c>i){
+//             greater = c;
+//         }
+//     }
 //     while (a>0){
-//         k=a%10;
-//         sum = sum + k;
+//         b=a%10;
+//         if (b>0){
+//             smaller = b;
+//         }
 //         a=a/10;
 //     }
-//     printf("sum = %d",sum);
+//     printf("THe smallest number is %d \n",smaller);
+//     printf("THe greatest  number is %d ",greater);
+// }
+// // date = 28/11/2025
+// //Square numbers sequence , 1^2,2^2,3^2,4^2,...,n^2
+// int main() {
+//     int a,i,sum=0;
+// printf("enter the numbeer till you want the sum of series : ");
+// scanf("%d",&a);
+// if (a==1){
+//     return 1;}
+// else {
+//         for (i=0;i<=a;i++){
+//             sum = sum + (i*i);
+//         }
+//     }
+// printf("the sum of the series's digits till %d is %d",a,sum);
 // }
 
+// //date = 28/11/2025
+// //0/0!​,1/1!​,2/2!​,...n/(n−1)!1
+
+// #include <stdio.h>
 // int factorial(int a){
 //     if (a==0){
 //         return 1;
@@ -431,86 +504,70 @@ void main(){
 //         return a * factorial(a-1);
 //     }
 // }
-//  void main(){
-//     int n;
-//     printf("Enter the number you want factorial of ");
-//     scanf("%d",&n);
-//     printf("The factorial of %d is %d",n,factorial(n));
-// }
-
-// void main (){
-//     int i=1,n,fact=1;
-//     printf("Enter the number you want factorial of ");
-//     scanf("%d",&n);
-//     for (i=1;i<=n;i++){
-//         fact = fact * i;
+// int main() {
+//     int a,i;
+//     float sum=0;
+// printf("enter the numbeer till you want the sum of series : ");
+// scanf("%d",&a);
+//         for (i=1;i<=a;i++){
+//             sum = sum + 1.0/factorial(i-1);
 //     }
-    // while (i>=n){
-    //     fact =((fact * i) + (fact));
-    //     i= i+1;
-
-    // }
-    // printf("The factorial of %d is %d",n,fact);
+// printf("the sum of the series's digits till %d is %f",a,sum);
 // }
-int main(){
+// // date = 28/11/2025
+// // invert any given array
+// void main (){
+//     int a,b,c,i;
 
-    int a,b,i,c, greater =0 , smaller =0;
-    printf("Enter the number:");
-    scanf("%d",&a);
-    for (i=0;i<=a;i++){
-        c=a%10;
-        if (c>i){
-            greater = c;
-        }
-    }
-    while (a>0){
-        b=a%10;
-        if (b>0){
-            smaller = b;
-        }
-        a=a/10;
-    }
-    printf("THe smallest number is %d \n",smaller);
-    printf("THe greatest  number is %d ",greater);
-}
-// date = 28/11/2025
-//Square numbers sequence , 1^2,2^2,3^2,4^2,...,n^2
-int main() {
-    int a,i,sum=0;
-printf("enter the numbeer till you want the sum of series : ");
-scanf("%d",&a);
-if (a==1){
-    return 1;}
-else {
-        for (i=0;i<=a;i++){
-            sum = sum + (i*i);
-        }
-    }
-printf("the sum of the series's digits till %d is %d",a,sum);
-}
+//     printf("enter the number of elements in the array");
+//     scanf("%d",&a);
+//     int array[a];
+//     for (i=0;i<a;i++){
+//     scanf("%d",&array[i]);}
+//     printf("the array you gave is ");
+//     for(b=0;b<a;b++){
+//         printf("%d",array[b]);
+//     }
+//     printf("\n");
+//      printf("the inverted version of your is ");
+//     for(c=(a-1);c>=0;c--){
+//         printf("%d",array[c]);
+// }}
 
-//date = 28/11/2025
-//0/0!​,1/1!​,2/2!​,...n/(n−1)!1
+// //  largest digit from an integer array
+// void main (){
+//     int a,b,i,largest=0,smallest=0;
 
-#include <stdio.h>
-int factorial(int a){
-    if (a==0){
-        return 1;
-    }
-    else if (a==1){
-        return 1;
-    }
-    else {
-        return a * factorial(a-1);
-    }
-}
-int main() {
-    int a,i;
-    float sum=0;
-printf("enter the numbeer till you want the sum of series : ");
-scanf("%d",&a);
-        for (i=1;i<=a;i++){
-            sum = sum + 1.0/factorial(i-1);
-    }
-printf("the sum of the series's digits till %d is %f",a,sum);
-}
+//     printf("enter the number of elements in the array");
+//     scanf("%d",&a);
+//     int array[a];
+//     for (i=0;i<a;i++){
+//     scanf("%d",&array[i]);
+//         if(array[i]>largest){
+//             largest=array[i];
+//         }
+//     }
+//     printf("the largest digit in the array is %d",largest);
+// }
+// // smallest and largest digit in array
+// void main (){
+//     int a,b,c,i,largest=0;
+
+//     printf("enter the number of elements in the array");
+//     scanf("%d",&a);
+//     int array[a];
+//     for (i=0;i<a;i++){
+//     scanf("%d",&array[i]);
+//         if(array[i]>largest){
+//             largest=array[i];
+//         }
+//     }
+//     int smallest=array[0];
+//     for (c=1;c<a;c++){
+//     if (array[c]<smallest){
+//         smallest=array[c];
+//     }}
+//     printf("the largest digit in the array is %d\n",largest);
+//     printf("the smallest digit in the array is %d",smallest);
+// }
+

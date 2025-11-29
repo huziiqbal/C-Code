@@ -59,3 +59,72 @@ int main() {
     }
     return 0;
 }
+// rectangle and square  star pattern
+// date = 29/11/2025
+void  main (){
+    int a,b,i,j;
+    printf("enter the number of stars in square ");
+    scanf("%d",&a);
+    for (i=0;i<a;i++){
+        for (j=0;j<a;j++){
+            printf(" * ");
+        }
+        printf("\n");
+    }
+
+printf("enter the width of star rectangle");
+scanf("%d",&a);
+printf("enter the length of star rectangle");
+scanf("%d",&b);
+for (i=0;i<b;i++){
+        for (j=0;j<a;j++){
+            printf(" * ");}
+        printf("\n");
+    }
+}
+// diamond pattern
+// date = 29/11/2025
+void main(){
+int a,i,n,h,j,spaces,stars;
+printf("Enter the number of rows of star pyramid you want to print : ");
+scanf("%d",&a);
+for (n=1;n<=a;n++){
+        stars=2*n-1;
+        spaces=a-n;
+    for (h=1;h<=spaces;h++){
+            printf(" ");}
+    for (j=1;j<=stars;j++){
+                printf("*");}
+                printf("\n");
+            }
+    for (i=a;i>0;i--){
+        stars=2*i-4;
+        spaces=a-i;
+    for (h=0;h<=spaces;h++){
+            printf(" ");}
+    for (j=0;j<=stars;j++){
+                printf("*");}
+                printf("\n");
+            }
+        }
+
+// rectangle perimeter stars
+// date = 29/11/2025
+void main(){
+    int col ,row;
+    printf("Enter the Length and Breadth of rectangle ");
+    scanf("%d , %d",&row ,&col);
+
+    for(int i = 1; i <= row; i++ )
+    {
+        for(int j = 1;j<= col;j++){
+            if(i == 1 || i == row || j == 1 || j == col){
+                printf(" * ");
+            }
+            else{
+                printf("   ");}
+        }
+
+        printf("\n");
+    }
+}
