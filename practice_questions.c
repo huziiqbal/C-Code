@@ -55,7 +55,7 @@
 //         int rev = reverse(a);
 
 //         printf("Reversed = %d", rev);
-    // }
+// }
 // //⚠️UNSOLVED⚠️//
 
 // // void main(){
@@ -103,12 +103,6 @@
 //             printf("you entered wrong input\n");
 //         if (a==00){
 //             break; }}}}
-
-
-
-
-
-
 
 // int sum(int a){
 //     int k,add = 0;
@@ -571,3 +565,38 @@
 //     printf("the smallest digit in the array is %d",smallest);
 // }
 
+// perfect squares till N
+// squares till the square of N
+// date = 2/12/2025
+void main()
+{
+    int num, i, ind = 0;
+    printf("Enter the number till which you want perfect square series \n");
+    scanf("%d", &num);
+    int arr[num];
+    printf("The perfect squares till %d are ", num * num);
+    for (i = 0; i <= num; i++)
+    {
+        arr[i] = i * i;
+        printf("%d ", arr[i]);
+    }
+}
+// 2nd version of perfect squares till N
+// squares till N
+// date = 2/12/2025
+void main()
+{
+    int num, i, ind = 0;
+    printf("Enter the number till which you want perfect square series \n");
+    scanf("%d", &num);
+    int arr[num];
+    printf("The perfect squares till %d are ", num * num);
+    for (i = 0; i <= num; i++)
+    {
+        if (i * i <= num)
+        {
+            arr[i] = i * i;
+            printf("%d ", arr[i]);
+        }
+    }
+}
