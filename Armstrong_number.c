@@ -9,17 +9,10 @@ void main (){
     char a[100];
     sprintf(a,"%d",num);
     f=strlen(a);
-    printf("the len of the number is %d\n",f);
     while (h>0){
     g =h%10;
         cube = cube + pow(g,f);
         h=h/10;
     }
-printf("the sum of cube of each digit of the give number is = %d\n",cube);
-if (cube == num ){
-    printf("The given number %d is Armstrong numbe ",num);
-}
-else if (cube != num){
-    printf("The given number %d is not an Armstrong number ",num);//eg 370,1634
-}
+cube == num?printf("%d is an Armstrong number ",num):  printf("%d is not an Armstrong number ",num);
 }
