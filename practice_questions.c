@@ -567,36 +567,72 @@
 
 // perfect squares till N
 // squares till the square of N
-// date = 2/12/2025
-void main()
-{
-    int num, i, ind = 0;
-    printf("Enter the number till which you want perfect square series \n");
-    scanf("%d", &num);
-    int arr[num];
-    printf("The perfect squares till %d are ", num * num);
-    for (i = 0; i <= num; i++)
-    {
-        arr[i] = i * i;
-        printf("%d ", arr[i]);
-    }
+// // date = 2/12/2025
+// void main()
+// {
+//     int num, i, ind = 0;
+//     printf("Enter the number till which you want perfect square series \n");
+//     scanf("%d", &num);
+//     int arr[num];
+//     printf("The perfect squares till %d are ", num * num);
+//     for (i = 0; i <= num; i++)
+//     {
+//         arr[i] = i * i;
+//         printf("%d ", arr[i]);
+//     }
+// }
+// // 2nd version of perfect squares till N
+// // squares till N
+// // date = 2/12/2025
+// void main()
+// {
+//     int num, i, ind = 0;
+//     printf("Enter the number till which you want perfect square series \n");
+//     scanf("%d", &num);
+//     int arr[num];
+//     printf("The perfect squares till %d are ", num * num);
+//     for (i = 0; i <= num; i++)
+//     {
+//         if (i * i <= num)
+//         {
+//             arr[i] = i * i;
+//             printf("%d ", arr[i]);
+//         }
+//     }
+// }
+// date = 3/12/2025
+// array operations
+void main (){
+    int a,i,b;
+    printf("enter the length of array you want to print");
+    scanf("%d",&a);
+    int arr[a];
+    for (i=0;i<a;i++){
+    scanf("%d",&arr[i]);}
+    printf("your array is :");
+      for (i=0;i<a;i++){
+    printf(" %d ",arr[i]);
 }
-// 2nd version of perfect squares till N
-// squares till N
-// date = 2/12/2025
-void main()
-{
-    int num, i, ind = 0;
-    printf("Enter the number till which you want perfect square series \n");
-    scanf("%d", &num);
-    int arr[num];
-    printf("The perfect squares till %d are ", num * num);
-    for (i = 0; i <= num; i++)
-    {
-        if (i * i <= num)
-        {
-            arr[i] = i * i;
-            printf("%d ", arr[i]);
-        }
-    }
+// printf("\nEnter the element you want to check ");
+// scanf("%d",&b);
+// printf("%d",arr[b-1]);
+int largest=0;
+for (i=0;i<a;i++){
+    if (arr[i]>largest){
+        largest =  arr[i];
+    }}
+printf("\nThe largest element in the array is %d",largest);
+
+printf("\nEnter the element you want to check\n");
+scanf("%d",&b);
+int tr=0;
+for (i=0;i<a;i++){
+if (arr[i]==b){
+    tr=tr+1;
+}}
+if (tr>0){
+    printf("YES! %d is present in the list",b);
+}
+else {
+    printf("NO! %d is not present in the list",b);
 }
