@@ -602,37 +602,87 @@
 // }
 // date = 3/12/2025
 // array operations
-void main (){
-    int a,i,b;
-    printf("enter the length of array you want to print");
-    scanf("%d",&a);
-    int arr[a];
-    for (i=0;i<a;i++){
-    scanf("%d",&arr[i]);}
-    printf("your array is :");
-      for (i=0;i<a;i++){
-    printf(" %d ",arr[i]);
-}
-// printf("\nEnter the element you want to check ");
-// scanf("%d",&b);
-// printf("%d",arr[b-1]);
-int largest=0;
-for (i=0;i<a;i++){
-    if (arr[i]>largest){
-        largest =  arr[i];
-    }}
-printf("\nThe largest element in the array is %d",largest);
+// void main (){
+//     int a,i,b;
+//     printf("enter the length of array you want to print");
+//     scanf("%d",&a);
+//     int arr[a];
+//     for (i=0;i<a;i++){
+//     scanf("%d",&arr[i]);}
+//     printf("your array is :");
+//       for (i=0;i<a;i++){
+//     printf(" %d ",arr[i]);
+// }
+// int largest=0;
+// for (i=0;i<a;i++){
+//     if (arr[i]>largest){
+//         largest =  arr[i];
+//     }}
+// printf("\nThe largest element in the array is %d",largest);
 
-printf("\nEnter the element you want to check\n");
-scanf("%d",&b);
-int tr=0;
-for (i=0;i<a;i++){
-if (arr[i]==b){
-    tr=tr+1;
-}}
-if (tr>0){
-    printf("YES! %d is present in the list",b);
-}
-else {
-    printf("NO! %d is not present in the list",b);
+// printf("\nEnter the element you want to check\n");
+// scanf("%d",&b);
+// int tr=0;
+// for (i=0;i<a;i++){
+// if (arr[i]==b){
+//     tr=tr+1;
+// }}
+// if (tr>0){
+//     printf("YES! %d is present in the list",b);
+// }
+// else {
+//     printf("NO! %d is not present in the list",b);
+// }
+// }
+
+ void main(){
+    int h,r;
+    int array[r];
+    printf("Enter the elenments  of your array :\n");
+    scanf("%d",&r);
+    printf("Enter the elements of your array:\n");
+    for (h=0;h<r;h++){
+            scanf("%d",&array[h]);
+        }
+          printf(" Your array is \n");
+        for (h=0;h<r;h++){
+            printf(" %d ",array[h]);}
+            printf(" \n ");
+        printf("Your reversed array is \n");
+        for (h=(r-1);h>=0;h--){
+            printf(" %d ",array[h]);}
+     }
+
+
+// date = 14/12/2025
+// sum of elements of matrix but if any element is zero it skip the one element below it (same column , next row)
+#include<stdio.h>
+void main (){
+    int r , c , i ,j,k,m,sum=0;
+    printf("enter the order of your matrix: ");
+    scanf("%d%d",&r,&c);
+    printf("enter the elements if your matrix row wise: ");
+    int matrix[r][c];
+    for (i=1;i<=r;i++){
+        for(j=1;j<=c;j++){
+            scanf("%d",&matrix[i][j]);
+        }
+    }
+    printf("The matrix is: \n");
+     for (k=1;k<=r;k++){
+        for(m=1;m<=c;m++){
+            printf(" %d ",matrix[k][m]);
+            if (matrix[k][m]==0){
+                if (k==r || m==c){
+                    sum = sum;
+                }
+                else {
+                sum =sum-matrix[k+1][m];}
+
+            }
+            sum = sum+matrix[k][m];
+        }
+         printf("\n");
+    }
+    printf("The sum of elements is %d",sum);
 }
