@@ -673,7 +673,7 @@ void main (){
         for(m=1;m<=c;m++){
             printf(" %d ",matrix[k][m]);
             if (matrix[k][m]==0){
-                if (k==r || m==c){
+                if (k==r){
                     sum = sum;
                 }
                 else {
