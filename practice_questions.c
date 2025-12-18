@@ -686,3 +686,29 @@ void main (){
     }
     printf("The sum of elements is %d",sum);
 }
+
+#include <stdio.h>
+void main (){
+    int points=0,i,k,a,b;
+char arr[5][5] = {
+    {'*','.','*','.','.'},
+    {'.','.','.','.','.'},
+    {'*','.','*','*','*'},
+    {'.','.','.','*','*'},
+    {'*','.','*','*','.'}
+};
+    do {
+        printf("Enter your guess by row and column number: \n");
+        scanf("%d%d",&a,&b);
+        if (arr[a-1][b-1]!='*'){
+            points=points+1;
+            printf("There was no landmine\n");
+            printf("+1 Point\n");
+        }
+        else if (arr[a-1][b-1]=='*'){
+            printf("You stepped on landmine\n");
+            printf("Game Over!\n");}
+        } while (arr[a-1][b-1]!='*');
+        printf("Your Total points are : %d",points);
+    }
+
