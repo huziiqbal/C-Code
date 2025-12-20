@@ -712,3 +712,25 @@ char arr[5][5] = {
         printf("Your Total points are : %d",points);
     }
 
+// reducing to 1
+#include<stdio.h>
+int main (){
+    int num, steps=0;
+printf("Enterthe number: ");
+scanf("%d",&num);
+if (num%2==0){
+    do {
+        num=num/2;
+        steps=steps+1;
+    }while (num>1);
+}
+else {
+    num = num+1;
+    steps =1;
+    do{
+        num=num/2;
+        steps = steps+1;
+    }while(num>1);
+}
+    printf("The number of steps is: %d",steps);
+}
