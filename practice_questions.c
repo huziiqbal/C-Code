@@ -635,108 +635,108 @@
 // }
 // }
 
- void main(){
-    int h,r;
-    int array[r];
-    printf("Enter the elenments  of your array :\n");
-    scanf("%d",&r);
-    printf("Enter the elements of your array:\n");
-    for (h=0;h<r;h++){
-            scanf("%d",&array[h]);
-        }
-          printf(" Your array is \n");
-        for (h=0;h<r;h++){
-            printf(" %d ",array[h]);}
-            printf(" \n ");
-        printf("Your reversed array is \n");
-        for (h=(r-1);h>=0;h--){
-            printf(" %d ",array[h]);}
-     }
+//  void main(){
+//     int h,r;
+//     int array[r];
+//     printf("Enter the elenments  of your array :\n");
+//     scanf("%d",&r);
+//     printf("Enter the elements of your array:\n");
+//     for (h=0;h<r;h++){
+//             scanf("%d",&array[h]);
+//         }
+//           printf(" Your array is \n");
+//         for (h=0;h<r;h++){
+//             printf(" %d ",array[h]);}
+//             printf(" \n ");
+//         printf("Your reversed array is \n");
+//         for (h=(r-1);h>=0;h--){
+//             printf(" %d ",array[h]);}
+//      }
 
 
-// date = 14/12/2025
-// sum of elements of matrix but if any element is zero it skip the one element below it (same column , next row)
-#include<stdio.h>
-void main (){
-    int r , c , i ,j,k,m,sum=0;
-    printf("enter the order of your matrix: ");
-    scanf("%d%d",&r,&c);
-    printf("enter the elements if your matrix row wise: ");
-    int matrix[r][c];
-    for (i=1;i<=r;i++){
-        for(j=1;j<=c;j++){
-            scanf("%d",&matrix[i][j]);
-        }
-    }
-    printf("The matrix is: \n");
-     for (k=1;k<=r;k++){
-        for(m=1;m<=c;m++){
-            printf(" %d ",matrix[k][m]);
-            if (matrix[k][m]==0){
-                if (k==r){
-                    sum = sum;
-                }
-                else {
-                sum =sum-matrix[k+1][m];}
+// // date = 14/12/2025
+// // sum of elements of matrix but if any element is zero it skip the one element below it (same column , next row)
+// #include<stdio.h>
+// void main (){
+//     int r , c , i ,j,k,m,sum=0;
+//     printf("enter the order of your matrix: ");
+//     scanf("%d%d",&r,&c);
+//     printf("enter the elements if your matrix row wise: ");
+//     int matrix[r][c];
+//     for (i=1;i<=r;i++){
+//         for(j=1;j<=c;j++){
+//             scanf("%d",&matrix[i][j]);
+//         }
+//     }
+//     printf("The matrix is: \n");
+//      for (k=1;k<=r;k++){
+//         for(m=1;m<=c;m++){
+//             printf(" %d ",matrix[k][m]);
+//             if (matrix[k][m]==0){
+//                 if (k==r){
+//                     sum = sum;
+//                 }
+//                 else {
+//                 sum =sum-matrix[k+1][m];}
 
-            }
-            sum = sum+matrix[k][m];
-        }
-         printf("\n");
-    }
-    printf("The sum of elements is %d",sum);
-}
+//             }
+//             sum = sum+matrix[k][m];
+//         }
+//          printf("\n");
+//     }
+//     printf("The sum of elements is %d",sum);
+// }
+// //MINE GAME
+// #include <stdio.h>
+// void main (){
+//     int points=0,i,k,a,b;
+// char arr[5][5] = {
+//     {'*','.','*','.','.'},
+//     {'.','.','.','.','.'},
+//     {'*','.','*','*','*'},
+//     {'.','.','.','*','*'},
+//     {'*','.','*','*','.'}
+// };
+//     do {
+//         printf("Enter your guess by row and column number: \n");
+//         scanf("%d%d",&a,&b);
+//         if (arr[a-1][b-1]!='*'){
+//             points=points+1;
+//             printf("There was no landmine\n");
+//             printf("+1 Point\n");
+//         }
+//         else if (arr[a-1][b-1]=='*'){
+//             printf("You stepped on landmine\n");
+//             printf("Game Over!\n");}
+//         } while (arr[a-1][b-1]!='*');
+//         printf("Your Total points are : %d",points);
+//     }
 
-#include <stdio.h>
-void main (){
-    int points=0,i,k,a,b;
-char arr[5][5] = {
-    {'*','.','*','.','.'},
-    {'.','.','.','.','.'},
-    {'*','.','*','*','*'},
-    {'.','.','.','*','*'},
-    {'*','.','*','*','.'}
-};
-    do {
-        printf("Enter your guess by row and column number: \n");
-        scanf("%d%d",&a,&b);
-        if (arr[a-1][b-1]!='*'){
-            points=points+1;
-            printf("There was no landmine\n");
-            printf("+1 Point\n");
-        }
-        else if (arr[a-1][b-1]=='*'){
-            printf("You stepped on landmine\n");
-            printf("Game Over!\n");}
-        } while (arr[a-1][b-1]!='*');
-        printf("Your Total points are : %d",points);
-    }
-
-// reducing to 1
-// ques 1
-#include<stdio.h>
-int main (){
-    int num, steps=0;
-printf("Enterthe number: ");
-scanf("%d",&num);
-if (num%2==0){
-    do {
-        num=num/2;
-        steps=steps+1;
-    }while (num>1);
-}
-else {
-    num = num+1;
-    steps =1;
-    do{
-        num=num/2;
-        steps = steps+1;
-    }while(num>1);
-}
-    printf("The number of steps is: %d",steps);
-}
+// // QUES 1 :
+// // reducing to 1
+// #include<stdio.h>
+// int main (){
+//     int num, steps=0;
+// printf("Enterthe number: ");
+// scanf("%d",&num);
+// if (num%2==0){
+//     do {
+//         num=num/2;
+//         steps=steps+1;
+//     }while (num>1);
+// }
+// else {
+//     num = num+1;
+//     steps =1;
+//     do{
+//         num=num/2;
+//         steps = steps+1;
+//     }while(num>1);
+// }
+//     printf("The number of steps is: %d",steps);
+// }
+// QUES 2:
 // bus number founder
-// ques 2
 #include<stdio.h>
 int main (){
     int num,max,tr=0,ind;
@@ -775,4 +775,54 @@ int main (){
         else {
             printf("Bus number is not found");
         }
+}
+
+// QUES 3
+// step by step array sorting
+#include<stdio.h>
+int main (){
+    int n,max,temp,pass=0;
+    printf("Enter the number of elements in that array: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter the max number of passes allowed: ");
+    scanf("%d",&max);
+    printf("Enter the elements of your array :\n");
+    for (int i=0;i<n;i++){
+        scanf("%d ",&arr[i]);
+    }
+    printf("Original array: ");
+    for (int i =0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+    for (int i = 0; i <=max; i++) {
+        for (int j = 0; j <n - (i - 1); j++) {
+            if (arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                pass = pass + 1;
+                  printf("After pass %d : ",pass);
+                for (int i =0;i<n;i++){
+                  printf("%d ",arr[i]);
+                }
+                    printf("\n");
+            }
+        }
+    }
+    if (pass == max){
+        printf("Fully Sorted in given passes\n");
+    }
+    else if (pass < max){
+        printf("Early Termination\n");
+    }
+    else {
+    printf("Not sorted in given passes allowed\n");
+    }
+    printf("The Final sorted array is :");
+    for (int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+
+    }
 }
