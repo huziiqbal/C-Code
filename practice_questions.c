@@ -734,3 +734,29 @@ else {
 }
     printf("The number of steps is: %d",steps);
 }
+// bus number founder
+#include<stdio.h>
+int main (){
+    int num,max,tr=0,ind;
+    int arr[max];
+    printf("Enter the number of elements in array: ");
+    scanf("%d",&max);
+    printf("Enter the bus numbers array: ");
+    for(int i=0;i<max;i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the bus number to be searched: ");
+    scanf("%d",&num);
+    for(int i =0;i<max;i++){
+        if(arr[i]==num){
+            tr = tr+1;
+            ind = i;
+        }
+    }
+    if (tr>0){
+        printf("Bus number is found at index %d ",ind);
+    }
+        else {
+            printf("Bus number is not found");
+        }
+}
