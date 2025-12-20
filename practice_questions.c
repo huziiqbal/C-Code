@@ -713,6 +713,7 @@ char arr[5][5] = {
     }
 
 // reducing to 1
+// ques 1
 #include<stdio.h>
 int main (){
     int num, steps=0;
@@ -735,24 +736,39 @@ else {
     printf("The number of steps is: %d",steps);
 }
 // bus number founder
+// ques 2
 #include<stdio.h>
 int main (){
     int num,max,tr=0,ind;
-    int arr[max];
     printf("Enter the number of elements in array: ");
     scanf("%d",&max);
+    int arr[max];
     printf("Enter the bus numbers array: ");
     for(int i=0;i<max;i++){
         scanf("%d",&arr[i]);
     }
     printf("Enter the bus number to be searched: ");
     scanf("%d",&num);
+    printf("The sorted array: ");
+    for (int i=0;i<max;i++){
+        for (int j=0;j<max - (i - 1);j++){
+            if (arr[j]>arr[j+1]){
+                int temp = arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    for (int j =0 ; j<max;j++){
+        printf("%d ",arr[j]);
+    }
     for(int i =0;i<max;i++){
         if(arr[i]==num){
             tr = tr+1;
             ind = i;
         }
     }
+    printf("\n");
     if (tr>0){
         printf("Bus number is found at index %d ",ind);
     }
