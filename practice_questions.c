@@ -527,7 +527,33 @@
 //     for(c=(a-1);c>=0;c--){
 //         printf("%d",array[c]);
 // }}
-
+// insertion in array
+// DATE = 21/12/2025
+#include<stdio.h>
+int main (){
+    int n,l,a;
+    int arr[100];
+    printf("Enter the length of array: ");
+    scanf("%d",&l);
+    printf("Enter the number of element which you want to modify : ");
+    scanf("%d",&n);
+    printf("Enter the element which you want to insert : ");
+    scanf("%d",&a);
+    for (int i =0 ; i<l;i++){
+        scanf("%d",&arr[i]);
+    }
+    for (int i =0 ; i<l;i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+    for (int i = l; i>=n;i--){
+        arr[i]=arr[i-1];
+    }
+    arr[n-1]=a;
+    for (int i =0 ; i<=l;i++){
+        printf("%d ",arr[i]);
+    }
+}
 // //  largest digit from an integer array
 // void main (){
 //     int a,b,i,largest=0,smallest=0;
