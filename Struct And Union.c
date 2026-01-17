@@ -167,3 +167,31 @@ int main (){
 
 }
 
+// Create a structure to store employee id, name, and salary.
+// Input details of N employees and display details of employees whose salary is greater than a given value.
+#include <stdio.h>
+#include <string.h>
+struct Employees{
+    int Employee_id;
+    char name[20];
+    int salary;
+
+};
+
+int main (){
+    struct Employees huzi = {100, "Huzi" , 100000};
+    struct Employees Huzaifa = {200 , "Huzaifa" , 200000};
+    struct Employees huji = {300 , "Huji" , 50000};
+    struct Employees salar[3] = {huzi,Huzaifa,huji};
+
+    int sal;
+    printf("Enter the comparative salary: ");
+    scanf("%d",&sal);
+    printf("THE EMPLOYEES ABOVE THIS SALARY CAP ARE: \n");
+      for (int i=0;i<3;i++){
+          if (sal<salar[i].salary){
+              printf(" Employee_id = %d\n Name = %s\n Salary = %d\n",salar[i].Employee_id,salar[i].name,salar[i].salary);
+          }
+      }
+
+ }
