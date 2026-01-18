@@ -220,3 +220,69 @@ int main (){
 
     printf("TOTAL COMBINED DISTANCE = %d km %d meters" ,kmdis, mdis);
 }
+
+
+// Q. Student Result System
+// Create a structure for a student containing roll number, name, and marks of 5 subjects.
+// Calculate and display total marks and percentage for each student.
+
+#include <stdio.h>
+struct Profile{
+    int Roll_number;
+    char name[20];
+    int marks [5];
+};
+
+int result(int *arr , int *a , int* b ){
+    for (int i = 0 ; i<5 ; i++){
+    *a = *a + arr[i];
+    }
+    *b = ( *a * 100)/ 150 ;
+    return 0 ;
+}
+
+int main(){
+
+    struct Profile Student1 = {101, "Huzaifa", {10, 10, 10, 10, 10}};
+
+    int total = 0, percent;
+
+    result(Student1.marks, &total, &percent);
+    printf(" Name = %s \n Roll number = %d \n Total marks = %d \n Percentage = %d %%", Student1.name, Student1.Roll_number, total, percent);
+}
+
+
+// Q. Nested Structure – Date of Birth
+// Create a structure Student that contains roll number, name, and another structure DOB containing day, month, year.
+// Input details for multiple students and display them neatly.
+
+#include <stdio.h>
+struct DOB{
+    int day;
+    int month;
+    int year;
+
+};
+struct Profile{
+   int roll_number;
+   char name [20];
+   struct DOB dob ;
+
+};
+
+int main(){
+
+    struct DOB huzi = {07 , 04 , 2005};
+    struct DOB ziya = {06 , 03 , 2010};
+
+    struct Profile huzaifa = {100 , "huzaifa" , huzi};
+    struct Profile ziiya = {200 , "ziya" , ziya};
+
+
+    printf(" Huzaifa:\n");
+    printf(" Roll number = %d\n Name = %s \n Day of birth = %d\n month of birth = %d\n year of birth = %d\n" , huzaifa.roll_number , huzaifa.name , huzi.day , huzi.month , huzi.year);
+    printf(" \n \n ZIYA:\n");
+    printf(" Roll number = %d\n Name = %s \n Day of birth = %d\n month of birth = %d\n year of birth = %d\n" , ziiya.roll_number , ziiya.name , ziya.day , ziya.month , ziya.year);
+
+    return 0;
+}
