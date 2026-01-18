@@ -148,7 +148,6 @@ int main (){
     printf("%s\n",huzii.arr);
 
     printf("%d", sizeof(struct students));
-
 }
 
 #include <stdio.h>
@@ -195,3 +194,29 @@ int main (){
       }
 
  }
+// Q. Structure with Function
+// Create a structure for distance (km and meters).
+// Write a program that takes two distances, adds them using a function, and prints the result.
+
+ #include <stdio.h>
+struct Distance{
+    int dis_in_km;
+    int dis_in_meter;
+};
+
+int add(int *c , int *d ,struct Distance j1 , struct Distance j2 ){
+
+    *c = j1.dis_in_km + j2.dis_in_km ;
+    *d = j1.dis_in_meter + j2.dis_in_meter;
+
+}
+
+int main (){
+    struct Distance journey1 = { 55 , 55000};
+    struct Distance journey2 = { 11 , 11000};
+
+    int kmdis, mdis;
+    add(&kmdis, &mdis , journey1 , journey2);
+
+    printf("TOTAL COMBINED DISTANCE = %d km %d meters" ,kmdis, mdis);
+}
