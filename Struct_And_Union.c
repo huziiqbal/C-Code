@@ -386,3 +386,72 @@ int main()
   printf("%s\n", huzi.arr);
   printf("%d" , sizeof(huzi)); // important size concept , here, size = 16 , if arr[17] then size = 20
 }
+
+
+// Q3. Employee Salary Representation
+// Create a union that stores hourly wage or monthly salary.
+// Use it to represent employees with different pay types and display the stored value.
+#include <stdio.h>
+union Profile {
+     int hourly_wage ;
+     int monthly_salary ;
+ };
+
+int main()
+{
+    union Profile workers;
+    int type;
+    printf("Choose your salary type: \n1 for Hourly wage\n2 for Monthly salary\n");
+    scanf("%d",&type);
+    if (type == 1){
+         printf("Enter your salary: ");
+         scanf("%d",&workers.hourly_wage);
+        printf("Employed is paid Hourly\nSalary amount = %d", workers.hourly_wage);
+    }
+    else if (type == 2){
+        printf("Enter your salary: ");
+        scanf("%d",&workers.monthly_salary);
+        printf("Employed is paid Monthly\nSalary amount = %d",workers.monthly_salary);
+    }
+    else
+    printf("INVALID INPUT");
+
+
+  return 0;
+}
+
+
+
+#include <stdio.h>
+int main()
+{
+	char arr[] = "<h1>this is the example string</h1>";
+	int l = sizeof(arr)/sizeof(arr[0]);
+	for (int i= 0 ; i <l ; i++) {
+		if (arr[i] == '>') {
+			int j= i + 1;
+			do {
+				printf("%c", arr[j]);
+				j= j + 1;
+			} while (arr[j] != '<');
+			if (arr[j]=='<') {
+				break;
+			}
+
+		}
+	}
+	return 0;
+}
+
+
+Q8. Tagged Union (Union + Flag)
+Create a structure containing:
+
+a flag variable
+
+a union holding either int, float, or char
+Use the flag to decide which union member is valid and display accordingly.
+
+Q9. Memory Optimization Scenario
+Design a program using a union to store different sensor data types (temperature, pressure, humidity), where only one sensor is active at a time.
+Demonstrate memory-efficient storage./
