@@ -425,24 +425,26 @@ int main()
 #include <stdio.h>
 int main()
 {
-	char arr[] = "<h1>this is the example string</h1>";
+	char arr[] = "<h1> this is the example string </h1>";
 	int l = sizeof(arr)/sizeof(arr[0]);
 	for (int i= 0 ; i <l ; i++) {
 		if (arr[i] == '>') {
 			int j= i + 1;
+			if (arr[i+1] == ' '){
+			    j=i+2;
+			}
 			do {
 				printf("%c", arr[j]);
 				j= j + 1;
+
 			} while (arr[j] != '<');
 			if (arr[j]=='<') {
 				break;
 			}
-
 		}
 	}
 	return 0;
 }
-
 
 Q8. Tagged Union (Union + Flag)
 Create a structure containing:
