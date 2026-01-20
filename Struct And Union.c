@@ -119,8 +119,7 @@ int main (){
 
 
 
-
-
+// Q1
 //STRUCT AND UNION
 #include <stdio.h>
 #include<string.h>
@@ -166,7 +165,7 @@ int main (){
 
 }
 
-// Create a structure to store employee id, name, and salary.
+// Q2 . Create a structure to store employee id, name, and salary.
 // Input details of N employees and display details of employees whose salary is greater than a given value.
 #include <stdio.h>
 #include <string.h>
@@ -194,7 +193,7 @@ int main (){
       }
 
  }
-// Q. Structure with Function
+// Q3 . Structure with Function
 // Create a structure for distance (km and meters).
 // Write a program that takes two distances, adds them using a function, and prints the result.
 
@@ -222,7 +221,7 @@ int main (){
 }
 
 
-// Q. Student Result System
+// Q4. Student Result System
 // Create a structure for a student containing roll number, name, and marks of 5 subjects.
 // Calculate and display total marks and percentage for each student.
 
@@ -252,7 +251,7 @@ int main(){
 }
 
 
-// Q. Nested Structure – Date of Birth
+// Q5. Nested Structure – Date of Birth
 // Create a structure Student that contains roll number, name, and another structure DOB containing day, month, year.
 // Input details for multiple students and display them neatly.
 
@@ -285,4 +284,105 @@ int main(){
     printf(" Roll number = %d\n Name = %s \n Day of birth = %d\n month of birth = %d\n year of birth = %d\n" , ziiya.roll_number , ziiya.name , ziya.day , ziya.month , ziya.year);
 
     return 0;
+}
+
+// Q6. Structure Pointer + Sorting
+// Create a structure to store name, roll number, and CGPA of students.
+// Use structure pointers to sort students by CGPA in descending order and display the result.
+
+#include <stdio.h>
+ struct Profile {
+     char name[20];
+     int roll_number;
+     float CGPA;
+ };
+
+ int arranged ( struct Profile * marks){
+
+     for (int j = 0; j < 3; j++) {
+     for (int i =0 ; i < 3 - j ; i++){
+         if (marks[i].CGPA < marks[i+1].CGPA){
+             struct Profile temp = marks[i];
+             marks[i] = marks[i + 1];
+             marks[i + 1] = temp;
+         }
+     }}
+     return 0;
+ }
+
+int main()
+{
+   struct Profile huzi = {"Huzii", 100 , 9.2};
+   struct Profile huzaifa = {"Huzaifa", 200 , 9.8};
+   struct Profile huzii = {"Huzi", 300 , 9.5};
+   struct Profile ziya = {"Ziya", 400 , 10.0};
+
+  struct Profile arr [4] = {huzi, huzaifa, huzii, ziya};
+
+  arranged(arr);
+  printf("SORTED LIST OF STUDENTS ACCORDING TO CGPA : \n");
+  for (int i =0 ; i <4 ; i++){
+      printf("NAME: %s\nRoll Number: %d\nCGPA: %.2f\n",arr[i].name,arr[i].roll_number, arr[i].CGPA);
+      printf("\n");
+  }
+  return 0;
+
+}
+
+
+
+
+// UNION
+
+// Q1 . Create a union to store either a roll number or CGPA of a student.
+// Store one at a time and display it based on user choice.
+
+#include <stdio.h>
+union Profile {
+     int roll_number ;
+     float CGPA ;
+ };
+
+int main()
+{
+  int choice;
+  union Profile huzi;
+  printf("Enter what detail of huzi you want to check: \n1.Roll number\n2.CGPA\n");
+  scanf("%d", &choice);
+  switch(choice){
+  case 1 : huzi.roll_number = 100;
+  printf("ROll NUMBER = %d",huzi.roll_number);
+  break;
+  case 2 : huzi.CGPA = 9.9;
+  printf("CGPA =  %.2f", huzi.CGPA);
+  break;
+  default :
+  printf("INVALID INPUT");
+  }
+
+  return 0;
+}
+
+
+// Q 2 .
+ #include <stdio.h>
+#include <string.h>
+ union Profile {
+     int i ;
+     char c ;
+     char arr[15];
+ };
+
+
+
+int main()
+{
+  union Profile huzi;
+  huzi.i = 69;
+  printf("%d\n", huzi.i);
+  huzi.c ='A';
+  printf("%c\n",huzi.c);
+  strcpy(huzi.arr,"huzaifa");
+  printf("%s\n", huzi.arr);
+  printf("%d" , sizeof(huzi)); // important size concept , here, size = 16 , if arr[17] then size = 20
 }
