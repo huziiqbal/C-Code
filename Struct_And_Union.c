@@ -425,6 +425,30 @@ int main()
 #include <stdio.h>
 int main()
 {
+	char arr[] = "<p>this is the example string<p>";
+	int l = sizeof(arr)/sizeof(arr[0]);
+	for (int i= 0 ; i <l ; i++) {
+		if (arr[i] == '>') {
+			int j= i + 1;
+			if (arr[i+1] == ' '){
+			    j=i+2;
+			}
+			do {
+				printf("%c", arr[j]);
+				j= j + 1;
+
+			} while (arr[j] != '<' );
+			if (arr[j] == '<') {
+				break;
+			}
+		}
+	}
+	return 0;
+}
+
+#include <stdio.h>
+int main()
+{
 	char arr[] = "<h1> this is the example string </h1>";
 	int l = sizeof(arr)/sizeof(arr[0]);
 	for (int i= 0 ; i <l ; i++) {
@@ -437,8 +461,8 @@ int main()
 				printf("%c", arr[j]);
 				j= j + 1;
 
-			} while (arr[j] != '<');
-			if (arr[j]=='<') {
+			} while (arr[j] != '\0' && arr[j+1] != '<');
+			if (arr[j] == '<') {
 				break;
 			}
 		}
@@ -446,14 +470,55 @@ int main()
 	return 0;
 }
 
-Q8. Tagged Union (Union + Flag)
-Create a structure containing:
+// Q8. Tagged Union (Union + Flag)
+// Create a structure containing:
 
-a flag variable
+// a flag variable
 
-a union holding either int, float, or char
-Use the flag to decide which union member is valid and display accordingly.
+// a union holding either int, float, or char
+// Use the flag to decide which union member is valid and display accordingly.
 
-Q9. Memory Optimization Scenario
-Design a program using a union to store different sensor data types (temperature, pressure, humidity), where only one sensor is active at a time.
-Demonstrate memory-efficient storage./
+// Q9. Memory Optimization Scenario
+// Design a program using a union to store different sensor data types (temperature, pressure, humidity), where only one sensor is active at a time.
+// Demonstrate memory-efficient storage./
+
+
+/*
+TRVEEL AGENCY QUESTION */
+
+#include <stdio.h>
+struct agency {
+    char name[20];
+    int driving_licence_number;
+    int Distance;
+
+};
+
+int main()
+{
+
+    struct agency driver1;
+    struct agency driver2;
+    struct agency driver3;
+
+    struct agency arr []={ driver1, driver2 , driver3};
+
+    for (int i = 0 ; i <3;  i++){
+        printf("\nENTER YOUR DETAILS DRIVER NUMBER %d :\n", i+1);
+        printf("YOUR NAME : ");
+        scanf("%s", arr[i].name);
+        printf("ENTER YOUR DRIVING LICENCE NUMBER: \n");
+        scanf("%d", &arr[i].driving_licence_number);
+        printf("ENTER YOUR ROUTE COVERED: ");
+        scanf("%d", &arr[i].Distance);
+
+    }
+
+    int i;
+    printf("\nENTER THE DRIVER NUMBER YOU WANT THE DEATAILS OF: \n");
+    scanf("%d",&i);
+    printf("NAME: %s\n",arr[i-1].name);
+    printf("LICENCE NUMBER: %d\n",arr[i-1].driving_licence_number);
+    printf("ROUTE COVERED IN KM: %d\n",arr[i-1].Distance);
+	return 0;
+}
