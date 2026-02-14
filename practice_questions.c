@@ -337,7 +337,26 @@
 
 //     return 0;
 // }
+/*
+2nd logic of factorial
+#include<stdio.h>
+int factorial(int n) {
+    int fac = 1 ;
+    while (n>0){
+        fac = fac * n ;
+        n--;
+    }
+    return fac;
+}
 
+int main() {
+    int num ;
+    printf("Enter the number you want the factorial of :");
+    scanf("%d",&num);
+    printf("Factorial of %d = %d\n", num, factorial(num));
+
+    return 0;
+}*/
 // // // function to find the square and cube of a number
 // int cube_square(int n){
 //     printf("The square of %d is : %d\n",n,n*n);
@@ -1102,7 +1121,7 @@ int main (){
         }
 }
 
-// QUES 
+// QUES
 // step by step array sorting
 #include<stdio.h>
 int main (){
@@ -1151,3 +1170,94 @@ int main (){
 
     }
 }
+
+// array pelindrome
+#include <stdio.h>
+
+int main()
+{
+	int pelindrome = 0;
+	int arr[] = {1,2,3,2,1};
+	int n = sizeof(arr)/sizeof(arr[0]);
+	for (int i=0 ; i<n/2 ; i++) {
+		if (arr[i]==arr[n-i-1]) {
+			pelindrome=pelindrome+1;
+		}
+	}
+	if (pelindrome==n/2){
+	    printf("The array is pelindrome");
+	}
+	else{
+	    printf("The array is not pelindrome");
+	}
+
+
+	return 0;
+}
+
+
+// reversed array
+#include <stdio.h>
+
+int main()
+{
+	int arr[] = {1,2,3,4,5};
+	int n = sizeof(arr)/sizeof(arr[0]);
+	for (int i =0 ; i<n/2 ; i++){
+	    int temp = arr[i];
+	    arr[i]= arr[n-i-1];
+	    arr[n-i-1] = temp;
+	}
+	printf("Reversed array is: \n");
+      for (int i=0 ;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+
+	return 0;
+}
+
+// MISSING NUMBER FROM ARRAY
+#include <stdio.h>
+int main()
+{
+	int arr[] = {1,3,4,5};
+	int n = sizeof(arr)/sizeof(arr[0]);
+	int sum =  (n+1)*(n+2)/2;
+	int sum2 =0;
+	for (int i =0 ; i<n;i++){
+	    sum2 = sum2 + arr[i];
+	}
+	printf("The missing number is %d", sum - sum2);
+
+	return 0;
+}
+
+// MORE THAN 1 ENTRY MISSIN FROM ARRAY
+#include <stdio.h>
+
+int main()
+{
+	int max =0 ;
+	int arr[] = {1,4,5};
+	int n = sizeof(arr)/sizeof(arr[0]);
+	for (int i =0 ; i < n ; i++) {
+		if (arr[i] > max) {
+			max = arr[i];
+		}
+	}
+	printf("The missing entries are :");
+	for (int j =1 ; j<=max ; j++) {
+		int found =0;
+		for (int i =0 ; i < n ; i ++) {
+			if (arr[i]==j) {
+				found = 1;
+				break;
+			}
+		}
+		if (found == 0 ) {
+			printf(" %d",j);
+		}
+	}
+	return 0;
+}
+
