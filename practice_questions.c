@@ -1261,3 +1261,30 @@ int main()
 	return 0;
 }
 
+// matrix multiplilcation
+#include <stdio.h>
+
+int main()
+{
+    int arr[2][3]={{1,2,3},{4,5,6}};
+    int tran[3][2]={{1,4},{2,5},{3,6}};
+    int mul[2][2];
+
+    for (int i =0 ; i<2 ; i++){
+        for (int j =0 ; j<2 ; j++){
+
+            mul[i][j]=0;
+            for (int k =0 ; k<3;k++){
+                mul[i][j]=mul[i][j] + arr[i][k]*tran[k][j];
+            }
+        }
+    }
+     printf("Result matrix:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("%d ", mul[i][j]);
+        }
+        printf("\n");
+    }
+
+}
