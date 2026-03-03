@@ -79,3 +79,28 @@ int main()
 	}
 	return 0;
 }
+
+//2nd correct/improved version of above ques //
+#include <stdio.h>
+#include<stdlib.h>
+int main()
+{
+	for (int j =0 ; j<3 ; j++) {
+		int n;
+		printf("EMPLOYEE NUMBER %d\n",j+1);
+		printf("Enter the number of characters in your I'd: ");
+		scanf("%d",&n);
+		char *ptr;
+		ptr=(char *)calloc(n+1,sizeof(char));
+		printf("Enter your I'D: ");
+		scanf("%s",ptr);
+		printf("I'D:");
+		printf("%s",ptr);
+		printf("\n");
+
+		free(ptr);
+	}
+	return 0;
+}
+
+
