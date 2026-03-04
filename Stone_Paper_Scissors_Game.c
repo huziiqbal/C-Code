@@ -36,11 +36,11 @@ int main()
 			draw+=1;
 
 	}
-	if (win>(rounds/2)||win > loss || win> draw) {
+	if (win > loss && win> draw) {
 		printf("YOU WON THE GAME");
 	}
 
-	else if (loss>(rounds/2)||loss > win || loss> draw) {
+	else if (loss > win && loss> draw) {
 		printf("YOU LOSS THE GAME");
 	}
 	else
