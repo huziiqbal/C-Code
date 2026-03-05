@@ -103,4 +103,31 @@ int main()
 	return 0;
 }
 
+// checking the pelindrome digit //
+#include <stdio.h>
+#include<string.h>
+int palindrome(int n){
+    char str_n[20];
+    sprintf(str_n,"%d",n);
+    int p=strlen(str_n);
+    char rev[p+1];
+    int k=0 ;
+    for (int i = p-1 ; i>=0;i--){
+        rev[k]=str_n[i];
+        k++;
+    }
+    rev[p] = '\0';
+    if (strcmp(str_n,rev )==0){
+        printf("The number is palindrome");
+    }
+    else
+    printf("The numnber is not palindrome");
 
+    return 0;
+}
+int main (){
+    int number;
+	printf ("Enter the number: ");
+	scanf("%d",&number);
+	palindrome(number);
+}
