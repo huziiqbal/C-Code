@@ -131,3 +131,4 @@ int main (){
 	scanf("%d",&number);
 	palindrome(number);
 }
+
