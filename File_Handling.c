@@ -144,3 +144,38 @@ int main() {
     fclose(ptr);
     printf("%s",alph);
 }
+
+// CHANGING FROM LOWER CASE TO UPPER CASE
+// DATE = 08/03/2026
+// File Content: abcdefghijklMNopqrstuvwxyz //
+#include <stdio.h>
+int main() {
+    int ch;
+    FILE *ptr;
+    ptr = fopen("text2.txt","r");
+    while ((ch=fgetc(ptr))!=EOF){
+        if (ch>='a'  && ch <= 'z' ){
+        ch = ch - 32;
+        printf("%c",ch);
+        }
+        else
+        printf("%c",ch);
+    }
+    fclose(ptr);
+}
+
+//Count Frequency of Each Character
+
+#include <stdio.h>
+int main() {
+    int ch;
+    int count;
+    FILE *ptr;
+    ptr = fopen("text2.txt","r");
+    count = 0;
+    while ((ch = fgetc(ptr))!= EOF){
+        
+
+    }
+
+}
