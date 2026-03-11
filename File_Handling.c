@@ -164,27 +164,53 @@
 //     fclose(ptr);
 // }
 
-//Count Frequency of Each Character
-//Date:09/03/2026
-// File Content:aabbccdddeffghijjj//
+// //Count Frequency of Each Character
+// //Date:09/03/2026
+// // File Content:aabbccdddeffghijjj//
+// // there is an array of 123 size , everytime any alphabet is detected iin  the file , the frequency as value of the index of number of the ascii value associated with that character stored , as if a is detected then on the index number 65 of the array the frequency is stored and frequency is increased till there is a , means the value of the index number [ascii od char] is the frequency of that ascii character , and when the charecter is called through %c , the ascii value is converted to characte of that ascii value , and returned with its value as frequency //
+// #include <stdio.h>
+// int main() {
+//     char ch;
+//     int count[123] = {0};
+//     FILE *ptr;
+//     ptr = fopen("text2.txt","r");
+//     while ((ch = fgetc(ptr))!= EOF){
+//         if ((ch>='a'  && ch <= 'z') || (ch >= 'A' && ch <= 'Z')){
+//             count[ch]++;
+//         }
+//     }
+//     fclose(ptr);
+
+//     for (int i =0 ; i < 123 ; i++){
+//         if (count[i] !=0){
+//             printf("%c : %d\n",i,count[i]);
+//         }
+//     }
+// }
+
+// Q.Reverse the File Content
+// File Content:Hello
+//Date = 9/03/2026
 #include <stdio.h>
+#include<string.h>
 int main() {
-    char ch;
-    int count[123] = {0};
+    int ch;
+    int i = 0 ;
+    char content[50];
     FILE *ptr;
-    ptr = fopen("text2.txt","r");
+    ptr = fopen("text2.txt", "r");
     while ((ch = fgetc(ptr))!= EOF){
         if ((ch>='a'  && ch <= 'z') || (ch >= 'A' && ch <= 'Z')){
-            count[ch]++;
+        content[i]= ch;
+        i++;
         }
     }
     fclose(ptr);
-
-    for (int i =0 ; i < 123 ; i++){
-        if (count[i] !=0){
-            printf("%c : %d\n",i,count[i]);
-        }
+    content[i]= '\0';
+    int k = strlen(content);
+    for (int j = k-1 ; j>=0 ; j--){
+        printf("%c", content[j]);
     }
-}
 
-// there is an array of 123 size , everytime any alphabet is detected iin  the file , the frequency as value of the index of number of the ascii value associated with that character stored , as if a is detected then on the index number 65 of the array the frequency is stored and frequency is increased till there is a , means the value of the index number [ascii od char] is the frequency of that ascii character , and when the charecter is called through %c , the ascii value is converted to characte of that ascii value , and returned with its value as frequency //
+    return 0;
+}
