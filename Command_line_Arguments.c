@@ -1,3 +1,4 @@
+//Q1.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,7 +21,10 @@ int main(int argc, char const *argv[])
     }
     return 0;
 }
+/*gcc Command_line_Arguments.c -o Command_line_Arguments*/
 
+
+// Q 2.
 #include <stdio.h>
 #include <stdlib.h>
 int main(int argc, char const *argv[])
@@ -36,4 +40,28 @@ int main(int argc, char const *argv[])
     }
     printf("The largest element is %d", largest);
 
+}
+
+// Q.3
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(int argc, char const *argv[])
+{
+    for (int i=argc - 1 ; i>0 ; i--){
+        printf("%s ",argv[i]);
+    }
+}
+//  Q4. factorial;
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, char const *argv[])
+{
+
+    int factorial = atoi(argv[1]);
+    for (int i = factorial-1 ; i>0 ;i--){
+        factorial = factorial * i ;
+    }
+
+    printf("The factoriala is %d", factorial);
 }
