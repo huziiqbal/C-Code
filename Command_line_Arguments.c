@@ -23,7 +23,6 @@ int main(int argc, char const *argv[])
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 int main(int argc, char const *argv[])
 {
     int largest = 0 ;
