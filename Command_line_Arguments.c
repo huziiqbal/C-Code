@@ -21,4 +21,20 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(int argc, char const *argv[])
+{
+    int largest = 0 ;
+    int n = argc;
+    printf("The size of argv is %d \n" , n);
+    for (int i = 1 ; i < n ; i++){
+        int j = atoi(argv[i]);
+         if (j > largest){
+            largest = j;
+         }
+    }
+    printf("The largest element is %d", largest);
 
+}
