@@ -22,7 +22,7 @@ int main()
 }
 
 
-//Finding the area od circle using the coordinates , and EuclideanDistance distance as its radiius//
+//Finding the area od circle using the coordinates , and EuclideanDistance as its radiius//
 // date = 16/03/26
 
 #include <stdio.h>
