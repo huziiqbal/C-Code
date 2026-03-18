@@ -290,25 +290,25 @@
 // // Create a structure to store name, roll number, and CGPA of students.
 // // Use structure pointers to sort students by CGPA in descending order and display the result.
 
-// #include <stdio.h>
-//  struct Profile {
-//      char name[20];
-//      int roll_number;
-//      float CGPA;
-//  };
+#include <stdio.h>
+ struct Profile {
+     char name[20];
+     int roll_number;
+     float CGPA;
+ };
 
-//  int arranged ( struct Profile * marks){
+ int arranged ( struct Profile * marks){
 
-//      for (int j = 0; j < 3; j++) {
-//      for (int i =0 ; i < 3 - j ; i++){
-//          if (marks[i].CGPA < marks[i+1].CGPA){
-//              struct Profile temp = marks[i];
-//              marks[i] = marks[i + 1];
-//              marks[i + 1] = temp;
-//          }
-//      }}
-//      return 0;
-//  }
+     for (int j = 0; j < 3; j++) {
+     for (int i =0 ; i < 3 - j ; i++){
+         if (marks[i].CGPA < marks[i+1].CGPA){
+             struct Profile temp = marks[i];
+             marks[i] = marks[i + 1];
+             marks[i + 1] = temp;
+         }
+     }}
+     return 0;
+ }
 
 // int main()
 // {
@@ -522,3 +522,36 @@
 //     printf("ROUTE COVERED IN KM: %d\n",arr[i-1].Distance);
 // 	return 0;
 // }
+
+
+#include<stdio.h>
+int main(){
+    int n;
+    struct song {
+        char name[10];
+        int length;
+    };
+
+    scanf("%d", &n);
+    struct song arr[n];
+    for ( int i = 0 ; i < n ; i++){
+        scanf("%s %d", arr[i].name, &arr[i].length);
+    }
+    for ( int i = 0 ; i< n ; i++ ){
+        for ( int j =0 ; j < n - 1 - i ; j++){
+            if (arr[j].length > arr[j+1].length ){
+                struct song temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+
+        }
+    }
+    printf("Sorted Songs:\n");
+    for (int i = 0 ; i < n ; i++){
+        printf("%s: %d\n",arr[i].name , arr[i].length);
+    }
+
+    return 0;
+
+}

@@ -1288,3 +1288,58 @@ int main()
     }
 
 }
+
+//transpose of matrix
+#include<stdio.h>
+int main(){
+    int r , c;
+    scanf("%d %d",&r , &c);
+    int matrix[r][c];
+    for ( int i = 0 ; i < r ; i++){
+        for ( int j =0 ; j<c; j++){
+            scanf("%d",&matrix[i][j]);
+        }
+    }
+
+     for ( int i = 0 ; i < c ; i++){
+        for ( int j =0 ; j<r; j++){
+            printf("%d ",matrix[j][i]);
+        }
+        printf("\n");
+    }
+
+}
+
+
+
+// Input 1 :
+// 23 54 16 43 27 89 32 45 72
+
+// Output 1 :
+// 23 43 32
+// 54 27 45
+// 16 89 72
+
+#include<stdio.h>
+int main(){
+
+    int arr[9];
+    int matrix[3][3];
+    int k = 0;
+    for ( int i =0  ; i < 9 ; i ++){
+        scanf("%d",&arr[i]);
+    }
+    for ( int i = 0  ; i <3 ; i++){
+        for ( int j =0 ; j<3 ; j++){
+            matrix[j][i] = arr[k];
+            k++;
+        }
+    }
+    for ( int i = 0  ; i < 3 ; i++){
+        for ( int j =0 ; j<3 ; j++){
+            printf("%d ",matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+}
