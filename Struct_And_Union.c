@@ -555,3 +555,52 @@ int main(){
     return 0;
 
 }
+
+
+// Up to 3 hours: Rs. 30.0
+// Beyond 3 hours: Rs. 30.0 + (hours - 3) * Rs. 5.0
+// Exactly 24 hours: Rs. 80.0
+
+
+// Input 1 :
+// 3
+// 1867 3
+// 5382 5
+// 2407 24
+
+// Output 1 :
+// 1867 3 30.00
+// 5382 5 40.00
+// 2407 24 80.00
+
+
+#include<stdio.h>
+int main(){
+    int n ;
+    scanf("%d",&n);
+    struct parking{
+        int number;
+        int hours;
+        float charges;
+    };
+    struct parking arr[n];
+    for ( int i = 0 ; i<n; i++){
+        scanf("%d %d",&arr[i].number,&arr[i].hours);
+
+    }
+    for ( int i = 0 ; i<n; i++){
+    if ((arr[i].hours)<= 3){
+        arr[i].charges = 30;
+    }
+    else if ((arr[i].hours > 3 && arr[i].hours != 24)){
+        arr[i].charges = 30.0 + ((arr[i].hours - 3)*5.0);
+    }
+    else if ((arr[i].hours == 24)){
+        arr[i].charges = 80.0;
+    }
+    }
+     for ( int i = 0 ; i<n; i++){
+         printf("%d %d %.2f\n",arr[i].number,arr[i].hours,arr[i].charges);
+     }
+}
+

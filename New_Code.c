@@ -257,3 +257,58 @@ int main(){
 }
 
 
+#include <stdio.h>
+
+int main()
+{
+    int n ;
+    scanf("%d",&n);
+    int arr[n];
+    for (int i = 0 ; i < n ; i++){
+        scanf("%d ",&arr[i]);
+    }
+    int key ;
+    scanf("%d",&key);
+    int greater = 0 ;
+    int lesser = 0 ;
+    int exct = 0 ;
+    for (int i = 0 ; i < n ; i++){
+        if ( arr[i] % key == 0){
+            exct++;
+        }
+        if ( arr[i]>key){
+            greater++;
+        }
+        if (arr[i] < key){
+            lesser++;
+        }
+    }
+    printf("Greater : %d\n",greater);
+    printf("Lesser : %d\n",lesser);
+    printf("Exactly divisible : %d",exct);
+}
+
+
+#include <stdio.h>
+
+int main()
+{
+    int arr[8] = { 1,2,5,3,6,6,4,8};
+    int count = 0;
+    int d;
+    for ( int i = 0 ; i < 8 ; i++){
+        for ( int j = 0 ;j < 8 ; j++){
+            if ( i != j && arr[i] == arr[j]){
+                count++;
+                d = arr[i];
+            }
+        }
+    }
+    if ( count >0 ){
+        printf("%d is Repeated %d Times",d , count);
+    }
+    else if ( count == 0){
+        printf("No Repeated Entry");
+    }
+
+}
