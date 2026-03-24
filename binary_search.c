@@ -34,3 +34,42 @@ int main()
 	}
 }
 
+
+
+#include<stdio.h>
+int main (){
+
+    int n;
+    int ans = -1;
+    scanf("%d",&n);
+    int arr[n];
+    for ( int i = 0; i < n ; i ++ ){
+        scanf("%d",&arr[i]);
+    }
+    int target;
+    scanf("%d",&target);
+    int found = 0;
+    int low = 0 , high = n -1;
+        while ( low <= high){
+        int mid = (low + high) / 2;
+            if ( arr[mid] == target){
+                printf("The closest item ID less than or equal to %d is %d ",target,arr[mid]);
+                return 0;
+            }
+            else if (arr[mid] <= target){
+                low = mid+1;
+                ans = arr[mid];
+            }
+           else  if ( arr[mid] >= target){
+                high = mid - 1;
+            }
+        }
+        if ( ans == -1){
+            printf("No closest item with an ID less than or equal to %d exists in the warehouse\n",target);
+        }
+        else {
+            printf("The closest item Id less than or equal to %d is %d", target ,ans);
+        }
+}
+
+
