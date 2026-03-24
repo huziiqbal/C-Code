@@ -33,83 +33,86 @@ for (int i =0 ; i<row; i++) {
 
 
 #include<stdio.h>
-int main (){
-    int r1,r2,c1,c2,n1,n2,val1,val2;
+int main(){
+    int r1,c1,r2,c2,k1,k2;
     scanf("%d %d",&r1,&c1);
-    scanf("%d",&n1);
-    int  mat1[n1][3];
-    for ( int i = 0 ; i < n1 ;i++){
-        for (int j = 0 ; j<3;j++){
-        scanf("%d ",&mat1[i][j]);
+    scanf("%d",&k1);
+    int offset = 0;
+    int matrix1[k1][3];
+    for ( int i = 0 ; i < k1; i++){
+        for ( int j = 0 ; j < 3 ; j++){
+            scanf("%d",&matrix1[i][j]);
         }
+    }
+    if (matrix1[0][0] == 1){
+        offset = 1;
     }
 
     scanf("%d %d",&r2,&c2);
-    scanf("%d",&n2);
-    int  mat2[n2][3];
-    for ( int i = 0 ; i < n2 ;i++){
-        for (int j = 0 ; j<3;j++){
-        scanf("%d ",&mat2[i][j]);
+    scanf("%d",&k2);
+    int matrix2[k2][3];
+    for ( int i = 0 ; i < k2; i++){
+        for ( int j = 0 ; j < 3 ; j++){
+            scanf("%d",&matrix2[i][j]);
         }
     }
-    int rmat1[n1][n1];
-     for ( int i = 0 ; i < n1 ;i++){
-        for (int j = 0 ; j<n1;j++){
-            rmat1[i][j] = 0;
-        }
-     }
-     for ( int i = 0 ; i < n1 ;i++){
-        for (int j = 0 ; j<n1;j++){
-            rmat1[(mat1[i][j])][(mat1[i][j+1])] = mat1[i][j+2];
-            break;
-        }
-     }
-    int rmat2[n1][n1];
-     for ( int i = 0 ; i < n2 ;i++){
-        for (int j = 0 ; j<n2;j++){
-            rmat2[i][j] = 0;
-        }
-     }
-     for ( int i = 0 ; i < n2 ;i++){
-        for (int j = 0 ; j<n2;j++){
-            rmat2[(mat2[i][j])][(mat2[i][j+1])] = mat2[i][j+2];
-            break;
-        }
-     }
-    int sum_matrix[n1][n1];
-    for ( int i = 0 ; i < n1 ;i++){
-        for (int j = 0 ; j<n1;j++){
-            sum_matrix[i][j] = rmat1[i][j] + rmat2[i][j];
+    if (matrix2[0][0] == 1){
+        offset = 1;
+    }
+    int res1[r1][r1];
+    int res2[r2][r2];
+    for ( int i = 0 ; i < r1; i++){
+        for (int j = 0 ; j < r1; j++){
+            res1[i][j]=0;
         }
     }
-    int count =0 ;
-    for ( int i = 0 ; i < n1 ;i++){
-        for (int j = 0 ; j<n1;j++){
-            if (sum_matrix[i][j] != 0){
-
+    for ( int i = 0 ; i < r2; i++){
+        for (int j = 0 ; j < r2; j++){
+            res2[i][j]=0;
+        }
+    }
+    for (int i = 0 ; i < k1;i++){
+        res1[matrix1[i][0] - offset][matrix1[i][1] - offset] = matrix1[i][2];
+    }
+    for (int i = 0 ; i < k2;i++){
+        res2[matrix2[i][0] - offset][matrix2[i][1] - offset] = matrix2[i][2];
+    }
+    int sum_mat[r1][c1];
+    for ( int i = 0 ; i < r1; i++){
+        for (int j = 0 ; j < c1; j++){
+            sum_mat[i][j] = res1[i][j] + res2[i][j];
+        }
+    }
+    int count = 0 ;
+    for ( int i = 0 ; i < r1; i++){
+        for (int j = 0 ; j < c1; j++){
+            if(sum_mat[i][j] != 0){
                 count++;
             }
         }
     }
-    int sparse[count][3];
-    int k = 0;
-    for ( int i = 0 ; i<n1 ; i++){
-        for (int j = 0 ; j<n1 ; j++){
-            if (sum_matrix[i][j] != 0){
-                sparse[k][0] = i ;
-                sparse[k][1] = j;
-                sparse[k][2] = sum_matrix[i][j];
+    int sparse_matrix[count][3];
+    int k = 0 ;
+    printf("Sparse Matrix:\n");
+    printf("Row Column Value\n");
+    for ( int i = 0 ; i < r1;i++){
+        for (int j = 0 ; j < c1;j++){
+            if (sum_mat[i][j]!=0){
+                sparse_matrix[k][0]= i + offset;
+                sparse_matrix[k][1]= j + offset ;
+                sparse_matrix[k][2]= sum_mat[i][j];
                 k++;
             }
         }
     }
-
-     for ( int i = 0 ; i<count; i++){
-        for (int j = 0 ; j<3; j++){
-            printf("%d ",sparse[i][j]);
+    for ( int i = 0 ; i < count;i++){
+        for (int j = 0 ; j < 3;j++){
+            printf("%d   ",sparse_matrix[i][j]);
         }
         printf("\n");
-     }
+    }
+
+return 0;
 
 }
 
@@ -221,44 +224,48 @@ int main (){
 
 
 #include<stdio.h>
-int main (){
-    int  n , m ,k;
-    scanf("%d %d %d",&n,&m,&k);
+int main(){
+    int n,m,k;
+    scanf("%d %d",&n,&m);
+    scanf("%d",&k);
     int matrix[k][3];
-    for (int j = 0 ; j < k ; j++ ){
-        for ( int i = 0 ; i < 3 ;i++){
-            scanf("%d",&matrix[j][i]);
+    for ( int i = 0 ; i < k; i++){
+        for (int j = 0 ; j < 3 ; j++){
+            scanf("%d",&matrix[i][j]);
         }
     }
-
-    float read_avg = 0.0;
-    int sensor_id;
-    scanf("%d",&sensor_id);
-    for ( int j = 0 ; j < k ; j++){
-        for (int i = 0 ;i < 3 ; i++){
-            printf("%d",matrix[j][i]);
-            if ( i == 2 ){
-                read_avg = read_avg + matrix[j][i];
-            }
+    int ID;
+    scanf("%d",&ID);
+    for ( int i = 0 ; i < k; i++){
+        for (int j = 0 ; j < 3 ; j++){
+            printf("%d ",matrix[i][j]);
         }
         printf("\n");
     }
-
-    float Avg_reading = read_avg /k;
-    printf("Average Reading: %.2f\n",Avg_reading);
-    int found = 0 ;
-
-    for (int i = 0 ;i < k ; i++){
-        if ( matrix[i][0] == sensor_id){
-             printf("Sensor %d: %d\n",matrix[i][0],matrix[i][2]);
-             found = 1;
-             break;
+    float avg;
+    float total = 0;
+    for ( int i = 0 ; i < k; i++){
+            total = total +matrix[i][2];
+    }
+    if (k>0){
+    avg = total / k ;
+    }
+    else
+    avg = 0;
+    int no = 0 ;
+    printf("Average Reading: %.2f\n",avg);
+    for ( int i = 0 ; i < k; i++){
+        if (matrix[i][0] == ID){
+                printf("Sensor %d: %d\n",ID,matrix[i][2]);
+                break;
         }
+        else
+        no++;
     }
-    if (found==0){
-         printf("No data recorded for this sensor.\n");
+    if (no == k){
+        printf("No data recorded for this sensor.\n");
     }
-    return 0 ;
+
 }
 
 // Input 1 :
