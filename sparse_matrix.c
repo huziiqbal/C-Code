@@ -342,3 +342,181 @@ int main(){
     }
 
 }
+
+
+
+
+#include<stdio.h>
+int main (){
+    int n ;
+    scanf("%d",&n);
+    int arr[n];
+    for (int i = 0 ; i < n ; i++){
+        scanf("%d",&arr[i]);
+    }
+    int k;
+    int count = 0 ;
+    scanf("%d",&k);
+    for ( int i = 0  ; i < n ; i++){
+        if ( arr[i] <= k){
+            count++;
+        }
+    }
+    int diff[count];
+    if ( arr[0] > k){
+        printf("No closest item with an ID less than or equal to %d exists in the warehouse\n",k);
+    }
+    else{
+        for ( int i = 0 ; i < n;i ++){
+            if (arr[i] <= k){
+                diff[i] = k - arr[i];
+            }
+        }
+        for ( int i = 0 ; i < count ; i++){
+            for ( int j = 0 ; j < count - 1 - i ; j++){
+                if (diff[j] > diff[j+1]){
+                    int temp = diff[j];
+                    diff[j] = diff[j+1];
+                    diff[j+1] = diff[j];
+                }
+            }
+        }
+    printf("The closest item ID less than or equal to %d is %d",k,k - diff[0]);
+    }
+}
+
+
+#include<stdio.h>
+int main (){
+    int n ;
+    scanf("%d",&n);
+    int arr[n];
+    for (int i = 0 ; i< n ; i++){
+        scanf("%d",&arr[i]);
+    }
+    int m ;
+    scanf("%d",&m);
+    int arr2[m];
+    for ( int i = 0 ; i < m ; i++){
+        scanf("%d", &arr2[i]);
+    }
+    int pos;
+    int no;
+    for ( int i = 0 ; i < m ; i ++){
+        pos = 0 ;
+        no = 0 ;
+        for ( int j = 0 ; j < n ; j++){
+            if (arr2[i] == arr[j]){
+                printf("%d found at position %d\n",arr2[i], j+1);
+            }
+            else
+            no++;
+            pos = i ;
+        }
+        if (no == n){
+            printf("%d not found in the inventory",arr2[pos]);
+        }
+
+    }
+
+}
+
+// Input 1 :
+// 10
+// 1 2 2 2 2 3 4 8 8 8
+// 8
+// Output 1 :
+// 7 9
+// Input 2 :
+// 10
+// 1 2 2 2 2 3 4 8 8 8
+// 5
+// Output 2 :
+// NO OCCURRENCES
+
+#include<stdio.h>
+int main (){
+    int n ;
+    scanf("%d",&n);
+    int arr[n];
+    for ( int i = 0 ; i < n ; i++){
+        scanf("%d",&arr[i]);
+    }
+    int k,d,l;
+    int no = 0,found = 0 ;
+    scanf("%d",&k);
+    for ( int i = 0 ; i < n ; i++){
+        if ( arr[i]==k){
+            found = 1;
+            d = i;
+            while(arr[i]==k){
+                l = i;
+                i++;
+            }
+        }
+        else
+        no++;
+    }
+    if (found == 1){
+        printf("%d %d",d,l);
+    }
+    if ( no == n){
+        printf("NO OCCURRENCES");
+    }
+
+}
+
+
+// Input 1 :
+// 5
+// 10 20 30 40 50
+// 4
+// 40 20 60 10
+// Output 1 :
+// 40 found at position 4
+// 20 found at position 2
+// 60 not found in the array
+// 10 found at position 1
+// Input 2 :
+// 4
+// 11 22 33 44
+// 2
+// 22 55
+// Output 2 :
+// 22 found at position 2
+// 55 not found in the array
+
+#include<stdio.h>
+int main (){
+    int n ;
+    scanf("%d",&n);
+    int arr1[n];
+    for ( int i = 0 ; i < n ; i++){
+        scanf("%d",&arr1[i]);
+    }
+    int m;
+    scanf("%d",&m);
+    int arr2[m];
+    for ( int i = 0 ; i < m ; i++){
+        scanf("%d",&arr2[i]);
+    }
+    int no;
+    for ( int i = 0 ; i < m; i++){
+        no = 0;
+        int d = 0;
+        for ( int j = 0 ;j < n ; j++){
+            if (arr2[i] == arr1[j]){
+                printf("%d found at position %d\n",arr2[i],(j+1));
+                break;
+            }
+            else{
+                no++;
+                d= arr2[i];
+            }
+        }
+        if (no == n){
+            printf("%d not found in the array\n",d);
+        }
+    }
+
+}
