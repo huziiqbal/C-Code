@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 struct Node{
     int data;
     struct Node * next;
@@ -16,6 +15,15 @@ void traverse( struct Node* head ){
     }
 }
 
+struct Node* insertion(struct Node* head ){
+    struct Node * new;
+    new = (struct Node*)malloc(sizeof(struct Node));
+
+    new -> data = 50;
+    new -> next = head;
+    return new;
+
+}
 int main (){
 
     struct Node * head;
@@ -32,6 +40,7 @@ int main (){
     third -> data = 30 ;
     third -> next = NULL;
 
+    head = insertion(head);
     traverse(head);
 
 }
