@@ -12,7 +12,7 @@
 
 // int collision(int n) {
 //     int i = 0 ;
-//     int ind = hashFunction(n) + i % SIZE ;
+//     int ind = (hashFunction(n) + i) % SIZE ;
 //     while(hashTable[ind] != -1){
 //          ind = (hashFunction(n) + i) % SIZE;
 //         i++;
@@ -38,8 +38,15 @@
 // 		}
 
 // 	}
-// 	for ( int i = 0 ; i < SIZE ; i++){
-// 	    printf("%d ",hashTable[i]);
+// 	for ( int i = 0 ; i < SIZE ; i++) {
+// 		if ( hashTable[i] == -1) {
+// 			printf("__ ");
+// 		}
+// 		else
+// 		{
+// 			printf("%d ",hashTable[i]);
+
+// 		}
 // 	}
 
 // 	return 0;
