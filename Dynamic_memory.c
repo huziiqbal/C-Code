@@ -61,7 +61,8 @@ int main()
 		printf("Enter the number of characters in your I'd: ");
 		scanf("%d",&n);
 		char *ptr;
-		ptr=(char *)calloc(n,sizeof(char));		ptr=(char *)calloc(n,sizeof(char));
+		ptr=(char *)calloc(n,sizeof(char));
+        ptr=(char *)calloc(n,sizeof(char));
 		printf("Enter your I'D: ");
 		for (int i =0 ; i<=n; i++) {
 			scanf("%c",&ptr[i]);
