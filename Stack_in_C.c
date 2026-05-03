@@ -79,5 +79,4 @@ int main()
     printf("Stack after pop operation\n");
     traverse(S);
 
-
 }
