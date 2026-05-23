@@ -47,7 +47,14 @@ int pop ( struct stack * ptr ){
     }
 
 }
-
+int peek(struct stack* ptr , int i ){
+    if ((ptr-> top - i + 1) < 0){
+        printf("Not valid input");
+    }
+    else{
+        return ptr -> arr[ptr -> top - i + 1];
+    }
+}
 int traverse ( struct stack * ptr){
     for( int i = 0 ; i <= ptr->top ; i++){
             printf("%d \n",ptr->arr[i]);
@@ -73,10 +80,13 @@ int main()
         scanf("%d",&value);
         push(S,value);
     }
-    printf("Your stack is \n");
-    traverse(S);
-    printf("The popped value is %d\n",pop(S));
-    printf("Stack after pop operation\n");
-    traverse(S);
+    
+    // printf("Your stack is \n");
+    // traverse(S);
+    printf("The peeked element is : %d",peek(S,5));
+    // peek(S , 5);
+    // printf("The popped value is %d\n",pop(S));
+    // printf("Stack after pop operation\n");
+    // traverse(S);
 
 }

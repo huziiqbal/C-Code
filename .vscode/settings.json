@@ -5,7 +5,7 @@
     "editor.insertSpaces": true,
     "editor.wordWrap": "on",
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Dark+",
     "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.showTabs": "multiple",
