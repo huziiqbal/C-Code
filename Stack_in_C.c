@@ -80,7 +80,7 @@ int main()
         scanf("%d",&value);
         push(S,value);
     }
-    
+
     // printf("Your stack is \n");
     // traverse(S);
     printf("The peeked element is : %d",peek(S,5));
