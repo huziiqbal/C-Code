@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 int main(){
-    int n = 9;
-    int arr[] = {9,4,2,1,5,6,3,8,7};
+    int n = 6;
+    int arr[] = {9,4,2,1,3,7};
     int j = 0 ;
     while ( j != n - 1){
         int k = j;
         int smallest = arr[j];
-        for (int i = j ; i< n ; i++){
+        for (int i = j+1 ; i< n ; i++){
             if (arr[i] < smallest){
                 smallest = arr[i];
                 k = i;
@@ -18,7 +18,8 @@ int main(){
             arr[j] = temp;
     j++;
     }
-    for (int i = 0 ; i < 9 ; i ++){
+    for (int i = 0 ; i < 6 ; i ++){
         printf("%d ",arr[i]);
     }
+
 }
