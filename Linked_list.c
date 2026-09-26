@@ -56,7 +56,6 @@ int insertionAtEnd(struct Node* head ,int data){
     p -> next  = newNode;
 
     return head ;
-
 }
 int insertionAtNode(struct Node* head ,int data , int index){
     struct Node* newNode = ( struct Node*)malloc ( sizeof ( struct Node));

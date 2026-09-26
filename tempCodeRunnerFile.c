@@ -1,34 +1,54 @@
-#include<stdio.h>
-#define SIZE 10
-int HashTable[SIZE] ;
-int HashFunction(int a){
-    return a % SIZE;
-}
-int collision(int a){
-    int i = 0 ; 
-    int index ;
-    while (HashTable[collision(a)] != -1){
-        index = (HashFunction(a) + i) % SIZE;
-        i++;
-    }
-    return index ;
-}
+
+// #include <stdio.h>
+
+// #define SIZE 10
+
+// int hashTable[SIZE];
+
+// int hashFunction(int key) {
+// 	return key % SIZE;
+// }
+
+// int collision(int n) {
+// 	int i = 0 ;
+// 	int ind = (hashFunction(n) + i*i )% SIZE ;
+// 	while(hashTable[ind] != -1) {
+// 		ind = (hashFunction(n) + i*i) % SIZE;
+// 		i++;
+// 	}
+// 	return ind;
+// }
 
 
-int main (){
-    for ( int i = 0 ; i < SIZE ; i++){
-        HashTable[i] = -1;
-    }
-    int n = 6 ;
-    int arr[n] = {8,3,13,6,4,10};
-    for ( int i = 0 ; i < n ; i++){
-        if (HashTable[HashFunction(arr[i])] == -1){
-            HashTable[HashFunction(arr[i])] = arr[i];
-        }
-        else {
-            HashTable[collision(arr[i])] = arr[i];
-        }
-    }
-    
-    
-}
+// int main() {
+
+// 	for (int i = 0; i < SIZE; i++) {
+// 		hashTable[i] = -1;
+// 	}
+
+// 	int key[] = {8,3,13,23,43,10};
+// 	for(int i = 0 ; i < 6 ; i++) {
+// 		int index = hashFunction(key[i]);
+// 		if (hashTable[index] == -1) {
+// 			hashTable[index] = key[i];
+// 		}
+// 		else {
+// 			int new_index = collision(key[i]);
+// 			hashTable[new_index] = key[i];
+// 		}
+
+// 	}
+
+// 	for ( int i = 0 ; i < SIZE ; i++) {
+// 		if ( hashTable[i] == -1) {
+// 			printf("__ ");
+// 		}
+// 		else
+// 		{
+// 			printf("\033[4m%d\033[0m ",hashTable[i]);
+
+// 		}
+// 	}
+
+// 	return 0;
+// }

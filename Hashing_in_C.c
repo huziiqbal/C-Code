@@ -20,7 +20,7 @@ int main (){
         HashTable[i] = -1;
     }
     int n = 6 ;
-    int arr[n] = {8,3,13,6,4,10};
+    int arr[6] = {8,3,13,6,4,10};
     for ( int i = 0 ; i < n ; i++){
         if (HashTable[HashFunction(arr[i])] == -1){
             HashTable[HashFunction(arr[i])] = arr[i];
@@ -30,5 +30,7 @@ int main (){
         }
     }
 
-
+    for (int i = 0; i < SIZE; i++) {
+    printf("%d -> %d\n", i, HashTable[i]);
+}
 }
