@@ -76,7 +76,7 @@ int main()
 
     int rootValue ;
     int n ;
-    printf("Enter the number of nodes in tree:")
+    printf("Enter the number of nodes in tree:");
     scanf("%d",&n);
 
     printf("Enter the first root value: ");
