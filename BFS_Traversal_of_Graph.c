@@ -1,80 +1,71 @@
 #include <stdio.h>
-#include <stdlib.h>
-
-#define MAX 100
-
-int graph[MAX][MAX] = {0};
-int visited [MAX];
-
-// struct queue {
-//     int size;
-//     int front ;
-//     int back;
-//     int *arr;
-// };
-
-// void traverse(struct queue *huzi){
-//     int i = huzi-> front + 1;
-//     while (i <= huzi-> back){
-//         printf("%d ",huzi ->arr[i]);
-//         i++;
-//     }
-//     printf("\n");
-// }
-
-// int dequeue(struct queue * huzi){
-//     int temp = huzi -> arr[huzi -> front];
-//     huzi-> front++;
-//     return temp;
-// }
-// void enqueue(struct queue * huzi , int value){
-//     huzi-> back++;
-//     huzi -> arr[huzi -> back] = value;
-
-// }
 
 
-int main()
-{
-    // struct queue* q;
-    // q -> size = 10;
-    // q -> arr = (int *) malloc ( q-> size * sizeof(int));
-    // q -> front = -1;
-    // q -> back = -1;
-    int vertices , edges , starting_point , u , v ;
-    printf("Enter number of vertices: ");
-    scanf("%d", &vertices);
-    printf("Enter number of edges: ");
-    scanf("%d", &edges);
-    for (int i = 0 ; i < edges ; i++){
-        printf("Enter edge (u v): ");
-        scanf("%d %d", &u, &v);
-        graph[u][v] = 1;
-        graph[v][u] = 2;
+int check(int num, int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == num) {
+            return 1;
+        }
     }
-    printf("Enter the starting vertex of the traversal: ");
-    scanf("%d",&starting_point);
-
-for ( int i = 0 ; i < vertices ; i++){
-    for ( int j = 0 ; j < vertices ; j ++){
-        printf("%d ",graph[i][j]);
-    }
-    printf("\n");
+    return 0;
 }
-    // int k = 0  ;
-    // int BSF[vertices];
-    // for ( int i = 0 ; i < vertices ; i++){
-    //     for ( int j = 0 ; j < vertices ; j++){
-    //         int temp = q -> front;
-    //         dequeue(q);
-    //         BSF[k] = temp ;
-    //         k++;
-    //         if ( graph[i][j] = 1 ){
-    //             enqueue(q,graph[i][j]);
-    //         }
 
-    //     }
-    // }
-    // traverse(q);
 
+
+int main() {
+    int n, i, j,edge ,start;
+    int u , v ;
+
+    printf("Enter number of vertices: ");
+    scanf("%d", &n);
+
+    int graph[n][n];
+    int BSF[n];
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            graph[i][j] = 0;
+        }
+    }
+
+
+    printf("Enter number of edges: ");
+    scanf("%d", &edge);
+
+    for (i = 0; i < edge ; i++){
+        printf("Enter the edge u : v ");
+        scanf("%d%d",&u , &v);
+        graph[u][v] = 1 ;
+        graph [v][u] = 1 ;
+
+    }
+
+
+    printf("Enter starting vertex: ");
+    scanf("%d", &start);
+    int k = 0;
+    int m = 0;
+
+    BSF[0] = start;
+
+    while (m <= k) {
+        int s = BSF[m];
+
+        for (int i = 0; i < n; i++) {
+            if (graph[s][i] == 1) {
+                if (check(i, BSF, k + 1) == 0) {
+                    k++;
+                    BSF[k] = i;
+                }
+            }
+        }
+
+        m++;
+    }
+    printf("BFS Traversal: ");
+
+    for (int i = 0; i <= k; i++) {
+        printf("%d ", BSF[i]);
+    }
+    return 0;
 }
